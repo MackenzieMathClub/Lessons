@@ -1,2 +1,2 @@
 # Senior
-Lessons for the sunior math club.
+Lessons for the senior math club.
