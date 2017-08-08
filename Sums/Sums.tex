@@ -1,9 +1,8 @@
-\documentclass{beamer}
+\documentclass[mathserif]{beamer}
 
 \usepackage{parskip}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{longdivision}
 \usepackage{graphicx}
 
 \frenchspacing
@@ -14,7 +13,6 @@
 
 \usetheme{Rochester}
 \usecolortheme{whale}
-\usefonttheme[onlymath]{serif}
 \beamertemplatenavigationsymbolsempty
 
 \AtBeginSection[] {%
@@ -95,8 +93,7 @@
 		This is $101 \times 100$, which we know is $10100$.
 
 		But we added up the numbers twice, so we need to divide by 2.
-		\rmfamily
-		\[\longdivision{10100}{2} \qquad\qquad \text{\LARGE$\therefore$}\sum_{n=1}^{100}n = 5050\]
+		\[10100 \div 2 = 5050 \qquad\qquad \text{\LARGE$\therefore$}\sum_{n=1}^{100}n = 5050\]
 	\end{frame}
 	\begin{frame}
 		\frametitle{\secname}
