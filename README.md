@@ -1,2 +1,2 @@
-# Junior
-Lessons for the junior math club.
+# Lessons
+Lessons for the math club.
