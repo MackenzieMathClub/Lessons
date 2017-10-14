@@ -1,0 +1,38 @@
+\documentclass[mathserif]{beamer}
+
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\frenchspacing
+
+\title{Exploding Dots}
+\subtitle{From James Tanton}
+\author{Vincent Macri}
+\date{\includegraphics{by-nc-sa}\\\copyright{} Vincent Macri, 2017}
+
+\usetheme{Rochester}
+\usecolortheme{whale}
+\beamertemplatenavigationsymbolsempty
+
+\AtBeginSection[] {%
+	\begin{frame}
+		\frametitle{Table of Contents}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\newenvironment{compactmath}[1][\normalsize]%
+	{\begin{minipage}{\textwidth}\vspace{-0.75\baselineskip}#1\begin{equation*}}
+	{\end{equation*}\end{minipage}}
+
+\newenvironment{namedframe}[1]%
+	{\begin{frame}\frametitle{\secname}\framesubtitle{#1}}
+	{\end{frame}}
+
+\begin{document}
+	\frame{\titlepage}
+	\section{Section title}
+	\begin{namedframe}{Subsection title}
+	\end{namedframe}
+\end{document}
