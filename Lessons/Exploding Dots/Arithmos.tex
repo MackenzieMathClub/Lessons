@@ -1,0 +1,162 @@
+\section{Arithmos}
+\begin{namedframe}{What next?}
+	We can count with these machines, but what else can we do?
+
+	\pause
+	What's the first thing you learn to do with numbers after counting?
+\end{namedframe}
+\bigframe{Addition!}
+\begin{namedframe}{Examples}
+	What is $234 + 125$?
+	\pause
+	\begin{equation*}
+		\begin{array}{rrrr}
+			  & 2 & 3 & 4\\
+			+ & 1 & 2 & 5\\\hline
+			  & 3 & 5 & 9
+		\end{array}
+	\end{equation*}
+	\pause
+	What is $234 + 187$?
+	\pause
+	\begin{equation*}
+		\begin{array}{rrrr}
+			  & 2 & 3  & 4\\
+			+ & 1 & 8  & 7\\\hline
+			  & 3 & 11 & 11
+		\end{array}
+	\end{equation*}
+	\pause
+	Three hundred eleventy eleven!
+
+	But now society thinks I'm weird. Let's fix that.
+\end{namedframe}
+\begin{namedframe}{Explode the dots!}
+	Three hundred eleventy eleven in a \textmach{1}{10} machine.
+	\only<1>{
+		\begin{explodingdots}{3}
+			\draw (1,0.5) node[dot]{};
+			\draw (1,1) node[dot]{};
+			\draw (1,1.5) node[dot]{};
+
+			\draw (2.25,0.25) node[dot]{};
+			\draw (2.5,0.75) node[dot]{};
+			\draw (2.5,1.25) node[dot]{};
+			\draw (2.5,1.75) node[dot]{};
+			\draw (3,0.25) node[dot]{};
+			\draw (3,0.75) node[dot]{};
+			\draw (3,1.25) node[dot]{};
+			\draw (3,1.75) node[dot]{};
+			\draw (3.5,0.5) node[dot]{};
+			\draw (3.5,1) node[dot]{};
+			\draw (3.5,1.5) node[dot]{};
+
+			\draw (4.5,0.25) node[dot]{};
+			\draw (4.5,0.75) node[dot]{};
+			\draw (4.5,1.25) node[dot]{};
+			\draw (4.5,1.75) node[dot]{};
+			\draw (5,0.25) node[dot]{};
+			\draw (5,0.75) node[dot]{};
+			\draw (5,1.25) node[dot]{};
+			\draw (5,1.75) node[dot]{};
+			\draw (5.5,0.5) node[dot]{};
+			\draw (5.5,1) node[dot]{};
+			\draw (5.5,1.5) node[dot]{};
+		\end{explodingdots}
+	}
+	\only<2>{
+		\begin{explodingdots}{3}
+			\draw (1,0.5) node[dot]{};
+			\draw (1,1) node[dot]{};
+			\draw (1,1.5) node[dot]{};
+			\draw (1.5,1.5) node[dot]{};
+
+			\draw (3,1) node[explode]{Boom!};
+			\draw (2.25,0.25) node[dot]{};
+
+			\draw (4.5,0.25) node[dot]{};
+			\draw (4.5,0.75) node[dot]{};
+			\draw (4.5,1.25) node[dot]{};
+			\draw (4.5,1.75) node[dot]{};
+			\draw (5,0.25) node[dot]{};
+			\draw (5,0.75) node[dot]{};
+			\draw (5,1.25) node[dot]{};
+			\draw (5,1.75) node[dot]{};
+			\draw (5.5,0.5) node[dot]{};
+			\draw (5.5,1) node[dot]{};
+			\draw (5.5,1.5) node[dot]{};
+		\end{explodingdots}
+	}
+	\only<3>{
+		\begin{explodingdots}{3}
+			\draw (1,0.5) node[dot]{};
+			\draw (1,1) node[dot]{};
+			\draw (1,1.5) node[dot]{};
+			\draw (1.5,1.5) node[dot]{};
+
+			\draw (2.25,0.25) node[dot]{};
+
+			\draw (4.5,0.25) node[dot]{};
+			\draw (4.5,0.75) node[dot]{};
+			\draw (4.5,1.25) node[dot]{};
+			\draw (4.5,1.75) node[dot]{};
+			\draw (5,0.25) node[dot]{};
+			\draw (5,0.75) node[dot]{};
+			\draw (5,1.25) node[dot]{};
+			\draw (5,1.75) node[dot]{};
+			\draw (5.5,0.5) node[dot]{};
+			\draw (5.5,1) node[dot]{};
+			\draw (5.5,1.5) node[dot]{};
+		\end{explodingdots}
+	}
+	\only<4>{
+		\begin{explodingdots}{3}
+			\draw (1,0.5) node[dot]{};
+			\draw (1,1) node[dot]{};
+			\draw (1,1.5) node[dot]{};
+			\draw (1.5,1.5) node[dot]{};
+
+			\draw (2.25,0.25) node[dot]{};
+			\draw (2.5,1) node[dot]{};
+
+			\draw (5,1) node[explode]{Boom!};
+			\draw (5.5,0.5) node[dot]{};
+		\end{explodingdots}
+	}
+	\only<5>{
+		\begin{explodingdots}{3}
+			\draw (1,0.5) node[dot]{};
+			\draw (1,1) node[dot]{};
+			\draw (1,1.5) node[dot]{};
+			\draw (1.5,1.5) node[dot]{};
+
+			\draw (2.25,0.25) node[dot]{};
+			\draw (2.5,1) node[dot]{};
+
+			\draw (5.5,0.5) node[dot]{};
+		\end{explodingdots}
+	}
+	\visible<5->{
+		\[421\]
+	}
+\end{namedframe}
+\bigframe{What do we learn after addition?}
+\bigframe{Multiplication!}
+\begin{namedframe}{Examples}
+	What is $2876 \times 3$?
+	\begin{equation*}
+		\begin{array}{rrrr}
+			2 & 8 & 7 & 6\\
+			\times & & & 3\\\hline
+			6 & 24 & 21 & 18
+		\end{array}
+	\end{equation*}
+	Let's fix this one together for society.
+	\Huge
+	\begin{explodingdots}{4}
+		\draw (1,1) node{6};
+		\draw (3,1) node{24};
+		\draw (5,1) node{21};
+		\draw (7,1) node{18};
+	\end{explodingdots}
+\end{namedframe}

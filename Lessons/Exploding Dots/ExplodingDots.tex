@@ -1,38 +1,32 @@
-\documentclass[mathserif]{beamer}
+\input{../Preamble}
 
-\usepackage{parskip}
-\usepackage{amsmath}
-\usepackage{amssymb}
+\usepackage{mathtools}
+
+\input{explodingdots}
+\input{longdiv}
 
 \frenchspacing
 
-\title{Exploding Dots}
-\subtitle{From James Tanton}
+\title{James Tanton's Exploding Dots}
 \author{Vincent Macri}
-\date{\includegraphics{by-nc-sa}\\\copyright{} Vincent Macri, 2017}
+\date{\includegraphics{by-nc-sa}\\\copyright{} Vincent Macri, 2017\\\footnotesize\url{https://creativecommons.org/licenses/by-nc-sa/4.0/}}
 
-\usetheme{Rochester}
-\usecolortheme{whale}
-\beamertemplatenavigationsymbolsempty
 
-\AtBeginSection[] {%
-	\begin{frame}
-		\frametitle{Table of Contents}
-		\tableofcontents[currentsection]
-	\end{frame}
-}
+\newenvironment{whatif}%
+	{\begin{namedframe}{What if\ldots}\Huge What if\ldots\normalsize
 
-\newenvironment{compactmath}[1][\normalsize]%
-	{\begin{minipage}{\textwidth}\vspace{-0.75\baselineskip}#1\begin{equation*}}
-	{\end{equation*}\end{minipage}}
+	}
+	{\end{namedframe}}
 
-\newenvironment{namedframe}[1]%
-	{\begin{frame}\frametitle{\secname}\framesubtitle{#1}}
-	{\end{frame}}
+\newcommand{\bigframe}[1]{\begin{namedframe}{#1}\Huge\centering#1\end{namedframe}}
 
 \begin{document}
 	\frame{\titlepage}
-	\section{Section title}
-	\begin{namedframe}{Subsection title}
-	\end{namedframe}
+	\include{Mechania}
+	\include{Insighto}
+	\include{Arithmos}
+	\include{Antidotia}
+	\include{Obelus}
+	\include{Eks}
+	\include{Infinitia}
 \end{document}

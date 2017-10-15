@@ -1,0 +1,89 @@
+\section{Obelus}
+\begin{namedframe}{Division}
+	Fun fact before we get started on division, did you know that the $\div$ sign is called an obelus?
+\end{namedframe}
+\begin{namedframe}{Long division method}
+	What is $276 \div 12$?
+
+	\alert{Don't use a calculator!}
+	\pause
+	{\rmfamily
+	\begin{equation*}
+		\longdiv{276}{12}
+	\end{equation*}
+	}
+	This is stupid and convoluted. Let's use exploding dots instead.
+\end{namedframe}
+\begin{namedframe}{Exploding dots method}
+	\[276 \div 12\]
+	$376$:
+	\begin{explodingdots}{3}
+		\draw (0.5,1) node[dot]{};
+		\draw (1.5,1) node[dot]{};
+
+		\draw (2.5,0.5) node[dot]{};
+		\draw (2.5,1) node[dot]{};
+		\draw (2.5,1.5) node[dot]{};
+		\draw (3.5,0.5) node[dot]{};
+		\draw (3.5,1) node[dot]{};
+		\draw (3.5,1.5) node[dot]{};
+		\draw (3,1) node[dot]{};
+
+		\draw (4.5,0.5) node[dot]{};
+		\draw (4.5,1) node[dot]{};
+		\draw (4.5,1.5) node[dot]{};
+		\draw (5.5,0.5) node[dot]{};
+		\draw (5.5,1) node[dot]{};
+		\draw (5.5,1.5) node[dot]{};
+	\end{explodingdots}
+	$12$:
+	\begin{explodingdots}{2}
+		\draw (1,1) node[dot]{};
+
+		\draw (3,0.5) node[dot]{};
+		\draw (3,1.5) node[dot]{};
+	\end{explodingdots}
+	Let's look for groups of $12$ in $276$.
+\end{namedframe}
+\begin{namedframe}{Exploding dots solution}
+	\begin{explodingdots}{2}
+		\draw (1,1) node[dot]{};
+
+		\draw (3,0.5) node[dot]{};
+		\draw (3,1.5) node[dot]{};
+	\end{explodingdots}
+	\pause
+	\begin{explodingdots}{3}
+		\draw (0.5,1) node[dot,red]{};
+		\draw (1.5,1) node[dot,green]{};
+
+		\draw (3,2.5) node{\Huge $2$};
+		\draw (2.5,0.5) node[dot,red]{};
+		\draw (2.5,1) node[dot,red]{};
+		\draw (2.5,1.5) node[dot,green]{};
+		\draw (3.5,0.5) node[dot,green]{};
+		\draw (3.5,1) node[dot,blue]{};
+		\draw (3.5,1.5) node[dot,yellow]{};
+		\draw (3,1) node[dot,orange]{};
+
+		\draw (5,2.5) node{\Huge $3$};
+		\draw (4.5,0.5) node[dot,blue]{};
+		\draw (4.5,1) node[dot,blue]{};
+		\draw (4.5,1.5) node[dot,yellow]{};
+		\draw (5.5,0.5) node[dot,yellow]{};
+		\draw (5.5,1) node[dot,orange]{};
+		\draw (5.5,1.5) node[dot,orange]{};
+	\end{explodingdots}
+	\pause
+	\[273 \div 12 = 23\]
+\end{namedframe}
+\begin{namedframe}{Examples together}
+What is $2783 \div 23$?
+\pause
+$121$
+
+\pause
+What is $2785 \div 23$?
+\pause
+$121\ \text{R}2$ or $121 + \frac{2}{23}$
+\end{namedframe}
