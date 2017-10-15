@@ -4,6 +4,8 @@
 	{\begin{center}\begin{tikzpicture}\draw[step=2cm,black,thick] (0,0) grid(2 * #1,2);}
 	{\end{tikzpicture}\end{center}}
 
+\newcommand{\blankexplodingdots}[1]{\begin{tikzpicture}\draw[step=1cm,black,thick] (0,0) grid(#1,1);\endt{tikzpicture}}
+
 \tikzset{dot/.style= {circle,fill=black,draw,scale=0.75}}
 \tikzset{tod/.style= {circle,fill=none,draw,scale=0.75}}
 \tikzset{explode/.style= {circle,fill=red,draw,minimum size=1.75cm}}
