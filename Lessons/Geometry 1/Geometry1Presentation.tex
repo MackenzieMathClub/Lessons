@@ -183,13 +183,13 @@
 				\draw (A) -- (B) -- (C) -- cycle;
 
 				\tkzMarkAngle[size=0.5](C,A,B);
-				\tkzLabelAngle[pos=0.9](C,A,B){$45\si{\degree}$};
+				\tkzLabelAngle[pos=0.9](C,A,B){$60\si{\degree}$};
 
 				\tkzMarkAngle[size=0.5](A,B,C);
-				\tkzLabelAngle[pos=0.9](A,B,C){$45\si{\degree}$};
+				\tkzLabelAngle[pos=0.9](A,B,C){$60\si{\degree}$};
 
 				\tkzMarkAngle[size=0.5](B,C,A);
-				\tkzLabelAngle[pos=0.9](B,C,A){$45\si{\degree}$};
+				\tkzLabelAngle[pos=0.9](B,C,A){$60\si{\degree}$};
 
 				\tkzLabelSegment[below=1pt](A,C){$b = 1$};
 				\tkzLabelSegment[right=1pt](B,C){$a = 1$};
@@ -437,7 +437,7 @@
 		\end{tikzpicture}
 	\end{namedframe}
 	\begin{namedframe}{Centroid}
-		The orthocenter is the point of intersection of the 3 medians of a triangle.
+		The centroid is the point of intersection of the 3 medians of a triangle.
 		\begin{center}
 			\begin{tikzpicture}
 				\coordinate [label=right:$A$](A) at (4,8);
@@ -459,7 +459,7 @@
 	\begin{namedframe}{Incenter}
 		The incenter is the point of intersection of the 3 angle bisectors of a triangle.
 		\begin{center}
-			\begin{tikzpicture}
+			\begin{tikzpicture}[scale=0.8]
 				\coordinate [label=below:$A$](A) at (1,1);
 				\coordinate [label=above:$B$](B) at (2,6);
 				\coordinate [label=right:$C$](C) at (5,3);
@@ -474,7 +474,7 @@
 			\end{tikzpicture}
 		\end{center}
 		\pause
-		The incenter is the centre of a triangle's incircle, the circle that has all points of the triangle on its circumference.
+		The incenter is the centre of a triangle's inscribed circle.
 	\end{namedframe}
 	\begin{namedframe}{Circumcenter}
 		The circumcenter is the point of intersection of the 3 perpendicular bisectors of a triangle.
