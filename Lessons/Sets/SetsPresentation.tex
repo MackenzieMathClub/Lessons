@@ -4,12 +4,12 @@
 \author{Vincent Macri}
 \date{\includegraphics{../LicenseLogo}\\\copyright{} Vincent Macri, 2017}
 
+\newcommand{\such}{\ |\ }
+
 \begin{document}
 	\frame{\titlepage}
 	\section{Types of Numbers}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{Basic types}
+	\begin{namedframe}{Basic types}
 		\begin{description}
 			\item[$\mathbb{N}$] Natural numbers ($0, 1, 2, 3, \dots$)
 			\item[$\mathbb{Z}$] Integers ($\mathbb{N} \text{ and } {-1}, -2, -3, \dots$)
@@ -18,10 +18,8 @@
 			\item[$\mathbb{C}$] Complex numbers ($\mathbb{R} \text{ and } i, 2i + 1, \dots$)
 			\item[$\mathbb{P}$] Prime numbers ($2, 3, 5, 7, \dots$)
 		\end{description}
-	\end{frame}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{Indexes}
+	\end{namedframe}
+	\begin{namedframe}{Indexes}
 		Some mathematicians include 0 in $\mathbb{N}$, and some do not.
 
 		While it is generally accepted that $\mathbb{N}$ includes 0, we have notation to specify:
@@ -36,11 +34,9 @@
 			\item[$\mathbb{Z}^-$] Negative integers (does not include 0)
 			\item[$\mathbb{R}^+$] Positive real numbers (does not include 0)
 		\end{description}
-	\end{frame}
+	\end{namedframe}
 	\section{Intervals}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{Open and closed}
+	\begin{namedframe}{Open and closed}
 		\begin{block}{Open intervals}
 			To denote numbers in an open (inclusive) range, we write: $[a, b]$
 
@@ -51,20 +47,16 @@
 
 			This means all the real numbers from $a$ to $b$, \alert{not} including $a$ and $b$.
 		\end{block}
-	\end{frame}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{Examples}
+	\end{namedframe}
+	\begin{namedframe}{Examples}
 		\begin{description}
 			\item [$[0, 10)$] means all real numbers from 0 to 10, including 0, but not including 10.
 			\item [$(-\infty, +\infty)$] means all real numbers.
 			\item [$[0, \infty)$] means all real numbers that are not negative.
 		\end{description}
-	\end{frame}
+	\end{namedframe}
 	\section{Sets}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{Basics}
+	\begin{namedframe}{Basics}
 		A set is an unordered collection of distinct elements.
 
 		A set with a finite number of elements can be written in braces such as $\{a, b, c, \dots\}$
@@ -76,10 +68,8 @@
 		Since the elements of a set are distinct:
 		\[\{a, b, c\} \equiv \{a, a, b, c, b\}\]
 		($\equiv$ means equivalent)
-	\end{frame}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{The empty set}
+	\end{namedframe}
+	\begin{namedframe}{The empty set}
 		The empty set is the set that contains no elements. It is denoted as $\varnothing$.
 		
 		\begin{examples}
@@ -93,11 +83,43 @@
 				\varnothing = \{\}
 			\end{compactmath}
 		\end{block}
-	\end{frame}
+	\end{namedframe}
+	\begin{namedframe}{Subsets and supersets}
+		A set $A$ is a subset of a set $B$ if all elements of $A$ are in $B$.
+
+		A set $B$ is a superset of a set $A$ if all elements of $A$ are in $B$.
+
+		\sep
+
+		We write that $A$ is a subset of $B$ as: $A \subseteq B$.
+
+		We write that $B$ is a superset of $A$ as: $B \supseteq A$.
+
+		\sep
+
+		What if $A \subseteq B$ and $B \subseteq A$?
+
+		\pause
+
+		Then $A = B$.
+
+		\sep
+
+		\begin{block}{Quick trick}
+			A set with $k$ elements has $2^k$ different subsets.
+		\end{block}
+	\end{namedframe}
+	\begin{namedframe}{Cardinality}
+		The cardinality of a set is the size of a set.
+
+		\sep
+
+		For example, the cardinality of the set $A = \{u, 1, c\}$ is \pause$3$.
+
+		We write this as $n(A) = 3$.
+	\end{namedframe}
 	\section{Notation}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{Set membership}
+	\begin{namedframe}{Set membership}
 		Recall our set of co-presidents:
 		\[M = \{\text{Vincent}, \text{Samantha}, \text{Caroline}\}\]
 		
@@ -105,10 +127,8 @@
 		\[\therefore \text{Vincent} \in M\]
 		To say that an element is not in a set, we use the symbol $\notin$, meaning ``is not an element of'', ``does not belong to'', or (informally) ``not in''.
 		\[\therefore \text{Euler} \notin M\]
-	\end{frame}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{Set-builder notation}
+	\end{namedframe}
+	\begin{namedframe}{Set-builder notation}
 		For more complex sets, we can define them using set-builder notation.
 
 		For example, we can define the set of even numbers as so:
@@ -121,10 +141,8 @@
 
 		\scriptsize
 		Sometimes, set-builder notation can get complicated. Using words to define a set is also valid, but you must be careful that you are \alert{not} ambiguous with your wording!
-	\end{frame}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{The universe of discourse}
+	\end{namedframe}
+	\begin{namedframe}{The universe of discourse}
 		The universe of discourse (commonly shortened to universe) is the set of all values under consideration. It is similar to the domain of a function.
 
 		The universe set is commonly denoted as $U$.
@@ -135,11 +153,9 @@
 			\[\mathbb{P} = \{x\ |\ x \in U \text{ and the only positive divisors of $x$ are $1$ and $x$}\}\]
 			If we had instead defined $U$ as $U = \mathbb{Z}$, then our definition of primes would include negative numbers, which would be wrong. This is why it is important to consider the universe of discourse.
 		\end{example}
-	\end{frame}
+	\end{namedframe}
 	\section{Operations with Sets}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{Set union}
+	\begin{namedframe}{Set union}
 		The union of two sets is a set containing all of the elements of both sets.
 		\\
 		The set union operator is: $\cup$
@@ -151,10 +167,8 @@
 		\[A = \{1, 2, 3\}\]
 		\[B = \{3, 4, 5\}\]
 		\[A \cup B = \{1, 2, 3, 4, 5\}\]
-	\end{frame}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{Set intersection}
+	\end{namedframe}
+	\begin{namedframe}{Set intersection}
 		The intersection of two sets is a set containing only the elements that are in both sets.
 		\\
 		The set intersection operator is: $\cap$
@@ -166,10 +180,8 @@
 		\[A = \{1, 2, 3\}\]
 		\[B = \{3, 4, 5\}\]
 		\[A \cap B = \{3\}\]
-	\end{frame}
-	\begin{frame}
-		\frametitle{\secname}
-		\framesubtitle{Set complement}
+	\end{namedframe}
+	\begin{namedframe}{Set complement}
 		The \alert{complement} of the set $A$ is all elements not in $A$.
 
 		If the universe, $U$, is defined, the \alert{absolute complement} of $A$ is all elements in $U$ that are not in $A$.
@@ -180,6 +192,7 @@
 				B \setminus A = \{x \in B\ |\ x \notin A\}
 			\end{compactmath}
 		\end{block}
+		\pause
 		\begin{examples}
 			\begin{compactmath}
 				\{1, 2, 3, 4, 5\} \setminus \{4, 5, 6, 7, 8\} = \{1, 2, 3\}
@@ -188,5 +201,17 @@
 				\mathbb{R} \setminus \mathbb{Q} = \{x\ |\ x \text{ is irrational}\}
 			\end{compactmath}
 		\end{examples}
-	\end{frame}
+	\end{namedframe}
+	\begin{namedframe}{Cartesian product}
+		The Cartesian product of a set $A$ with a set $B$ is defined as:
+		\[A \times B = \{(a,b) \such a \in A \wedge b \in B\}\]
+
+		\sep
+
+		For example, if $A = \{1,2,3\}$ and $B = \{a,b,c\}$, what is $A \times B$?
+
+		\pause
+
+		\[A \times B = \{(1,a),(1,b),(1,c),(2,a),(2,b),(2,c),(3,a),(3,b),(3,c)\}\]
+	\end{namedframe}
 \end{document}

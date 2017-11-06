@@ -6,7 +6,7 @@
 
 \frenchspacing
 
-\logo{\includegraphics[width=0.075\textwidth]{../Logo}}
+\logo{\includegraphics[width=0.07\textwidth]{../Logo}}
 
 \usetheme{Rochester}
 \usecolortheme{whale}
@@ -20,9 +20,11 @@
 }
 
 \newenvironment{compactmath}[1][\normalsize]%
-	{\begin{minipage}{\textwidth}\vspace{-0.75\baselineskip}#1\begin{equation*}}
+	{\begin{minipage}{\textwidth}\vspace{-0.5\baselineskip}#1\begin{equation*}}
 	{\end{equation*}\end{minipage}}
 
 \newenvironment{namedframe}[1]%
 	{\begin{frame}\frametitle{#1}\framesubtitle{\secname}}
 	{\end{frame}}
+
+\newcommand{\sep}{\pause\vspace{1ex}}

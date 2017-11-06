@@ -1,0 +1,56 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{tasks}
+\usepackage{fancyhdr}
+
+\frenchspacing
+
+\title{Sets}
+\author{Mackenzie Math Club}
+\date{November 6, 2017}
+
+\newcommand{\such}{\ |\ }
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\cfoot{Page \thepage}
+\lfoot{\texttt{mackenziemathclub.github.io}}
+\rfoot{\copyright{} Vincent Macri, 2017}
+
+\begin{document}
+	\maketitle
+	\thispagestyle{fancy}
+	\section{Overview}
+		\subsection{Notation overview}
+			\begin{itemize}
+				\item A set is an unordered collection of distinct elements.
+				\item A set $A$ is a subset of a set $B$ if all elements in $A$ are in $B$. This also makes $B$ a superset of $A$.
+				\item The cardinality of a set $A$, written as $n(A)$, is the number of elements in $A$.
+			\end{itemize}
+		\subsection{Operations overview}
+			For two sets $A$ and $B$, the following operations are defined:
+			\begin{description}
+				\item[Union] $A \cup B$ is a set containing all elements in either $A$ or $B$.
+				\item[Intersection] $A \cap B$ is a set containing all elements in both $A$ \emph{and} $B$.
+				\item[Relative complement] $B \setminus A$ is the set of all elements in $B$ that are not in $A$.
+				\item[Cartesian product] $A \times B = \{(a,b) \such a \in A \text{ and } b \in B\}$
+			\end{description}
+	\section{Questions}
+		If $A = \{7,3,9,18,24\}$ and $B = \{24,119,9,3\}$, then find:
+		\begin{tasks}[style=enumerate](2)
+			\task $A \cup B$
+			\task $n(A \cup B)$
+			\task $A \cap B$
+			\task $n(A \cap B)$
+			\task $A \setminus B$
+			\task $n(A \setminus B)$
+			\task $A \times B$
+			\task $n(A \times B)$
+		\end{tasks}
+\end{document}
