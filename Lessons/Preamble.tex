@@ -1,5 +1,6 @@
 \documentclass[mathserif]{beamer}
 
+\usepackage{xparse}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
@@ -10,7 +11,8 @@
 
 \usetheme{Rochester}
 \usecolortheme{whale}
-%\beamertemplatenavigationsymbolsempty
+
+\setbeamertemplate{frametitle continuation}[from second][\hfill\insertcontinuationtext]
 
 \AtBeginSection[] {%
 	\begin{frame}
@@ -23,8 +25,16 @@
 	{\begin{minipage}{\textwidth}\vspace{-0.5\baselineskip}#1\begin{equation*}}
 	{\end{equation*}\end{minipage}}
 
+\newenvironment{sizedmath}[1]%
+	{\begingroup#1\begin{equation*}}
+	{\end{equation*}\endgroup}
+
 \newenvironment{namedframe}[1]%
 	{\begin{frame}\frametitle{#1}\framesubtitle{\secname}}
+	{\end{frame}}
+
+\newenvironment{namedbreakframe}[1]%
+	{\begin{frame}[allowframebreaks]\frametitle{#1}\framesubtitle{\secname}}
 	{\end{frame}}
 
 \newcommand{\sep}{\pause\vspace{1ex}}

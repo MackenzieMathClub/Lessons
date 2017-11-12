@@ -1,0 +1,150 @@
+\input{../Preamble}
+
+\title{Sequences and Series}
+\subtitle{Your soon-to-be new best friend $\heartsuit$}
+\author{Samantha Unger}
+\date{\includegraphics{../LicenseLogo}\\\copyright{} Samantha Unger, 2017}
+
+\DeclareTextFontCommand{\emph}{\bfseries}
+
+\begin{document}
+	\frame{\titlepage}
+	\section{Summations}
+	\begin{namedframe}{Introduction to Sigma notation}
+		What is Sigma notation?
+		\begin{itemize}[<+(1)->]
+			\item Fun, easy-to-use way to sum things up!
+			\item Super similar to a counted loop in computer programming
+		\end{itemize}
+		\pause
+		Fun fact: Sigma is the 18th letter of the Greek alphabet, and is transliterated as ``s''.
+	\end{namedframe}
+	\begin{namedframe}{Using Sigma notation}
+		\begin{compactmath}[\Large]
+			\sum_{n=1}^{4}n
+		\end{compactmath}
+		The Sigma notation consists of several components. In the example above, we have:
+		\begin{description}
+			\item[$n$ under Sigma] Index of summation. Some people use $i$, $k$, or $x$
+			\item[$1$] First value of $n$ (can be anything)
+			\item[$4$] Term we end on
+			\item[$n$ after Sigma] Formula for each turn
+		\end{description}
+		\sep
+		\[\sum_{n=1}^{4}n = 1 + 2 + 3 + 4 = 10\]
+	\end{namedframe}
+	\begin{namedframe}{Example}
+		Let's try some quick maths!
+
+		We'll do this one together.
+
+		There's more on your worksheet.
+	\end{namedframe}
+	\begin{namedframe}{Some \emph{super-cool} and \emph{super-useful} properties}
+		Let's talk about why these work:
+
+		\sep
+
+		Multiplying by a constant:
+		\[\sum_{k=m}^{n}ca_k = c\sum_{k=m}^{n}a_k\]
+
+		\sep
+
+		Adding/subtracting:
+		\[\sum_{k=m}^{n}(a_k + b_k) = \sum_{k=m}^{n}a_k + \sum_{k=m}^{n}b_k\]
+	\end{namedframe}
+	\begin{namedbreakframe}{Summation shortcuts ;)}
+		\begin{block}{Summing $1$ equals $n$}
+			\[\sum_{k=1}^{n}1 = n\]
+		\end{block}
+		\begin{block}{Summing the constant $c$ equals $c \times n$}
+			\[\sum_{k=1}^{n}c = nc\]
+		\end{block}
+		\framebreak
+		\begin{alertblock}{A shortcut when summing $k$ (we will develop this later)}
+			\[\sum_{k=1}^{n}k = \frac{n(n+1)}{2}\]
+		\end{alertblock}
+		\framebreak
+		These ones are pretty cool and useful:
+		\begin{block}{A shortcut when summing $k^2$}
+			\[\sum_{k=1}^{n}k^2 = \frac{n(n+1)(2n+1)}{6}\]
+		\end{block}
+		\begin{block}{A shortcut when summing $k^3$}
+			\[\sum_{k=1}^{n}k^3 = \left(\frac{n(n+1)}{2}\right)^2\]
+		\end{block}
+	\end{namedbreakframe}
+	\begin{namedframe}{Try this!}
+		\Huge
+		Try the super cool practice word problem on your sheet!
+	\end{namedframe}
+	\section{Arithmetic Sequences}
+	\begin{namedframe}{What is an arithmetic sequence?}
+		\begin{itemize}
+			\item A sequence of numbers where there is a constant difference between successive terms
+			\item Example: $3,5,7,9,11$
+		\end{itemize}
+		\pause
+		We can define the $n\textsuperscript{th}$ term with either of the following formulas:
+		\[a_n = a_1 + (n-1)d \qquad a_n = a_m + (n-m)d\]
+		Where we have:
+		\begin{description}
+			\item[$a_n$] the $n\textsuperscript{th}$ term
+			\item[$n$] the term number
+			\item[$d$] the constant difference
+			\item[$m$] the $m\textsuperscript{th}$ term.
+			\item[$a_1$] the first term of the series if we start counting from 1
+		\end{description}
+	\end{namedframe}
+	\begin{namedframe}{Sum of finite arithmetic series}
+		How can we easily sum a finite arithmetic series?
+		\begin{itemize}[<+(1)->]
+			\item Let me tell you about my main man Gauss\dots
+			\item Pair up your values and divide by 2!
+		\end{itemize}
+		\pause
+		\[S_n = \frac{n}{2}(a_1 + a_n)\]
+	\end{namedframe}
+	\section{Geometric Sequences}
+	\begin{namedframe}{What is a geometric sequence?}
+		\begin{itemize}
+			\item Follows a pattern where each term in found by multiplying the previous term by a constant called the common ratio
+			\item Examples: $3,6,12,24,48$ \hspace{2em} or \hspace{2em} $\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{16}$
+		\end{itemize}
+		\pause
+		We can define the $n\textsuperscript{th}$ term with any of the following formulas:
+		\[a_n = a_{n-1} \times r \qquad a_n = a_1 \times r^{n-1}\]
+		Where we have:
+		\begin{description}
+			\item[$a_n$] the $n\textsuperscript{th}$ term
+			\item[$a_{n-1}$] the $(n-1)\textsuperscript{th}$ (previous) term
+			\item[$a_1$] the first term of the series
+			\item[$n$] the term number
+			\item[$r$] the common ratio
+		\end{description}
+	\end{namedframe}
+	\begin{namedframe}{Sum of finite geometric series}
+		\begin{equation*}
+			\begin{array}{lrrrrrrrrrrrrr}
+				S_n  &= &a &+ &ar &+ &ar^2 &+ &ar^3 &+ \dots &+ &ar^{n-1} &  &    \\
+				rS_n &= &  &+ &ar &+ &ar^2 &+ &ar^3 &+ \dots &+ &ar^{n-1} &+ &ar^n
+			\end{array}
+		\end{equation*}
+		\begin{align*}
+			S_n - rS_n &= a - ar^n\\
+			S_n(1 - r) &= a(1-r^n)\\
+			\therefore S_n &= a\left(\frac{1-r^n}{1-r}\right)
+		\end{align*}
+	\end{namedframe}
+	\section{The Mind-blowing Part}
+	\begin{namedframe}{What if\dots}
+		What if I told you that the sum of some \emph{infinite} series wasn't infinite?
+
+		\sep
+
+		What if I told you that we can solve this? Can you sense the excitement?
+
+		\begin{sizedmath}{\Huge}
+			\sum_{k=1}^{\infty} 3\left(\frac{1}{2}\right)^{k-1}
+		\end{sizedmath}
+	\end{namedframe}
+\end{document}
