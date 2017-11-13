@@ -1,5 +1,8 @@
 \input{../Preamble}
 
+\usepackage{tikz}
+\usepackage{xfrac}
+
 \title{Sequences and Series}
 \subtitle{Your soon-to-be new best friend $\heartsuit$}
 \author{Samantha Unger}
@@ -98,10 +101,21 @@
 	\begin{namedframe}{Sum of finite arithmetic series}
 		How can we easily sum a finite arithmetic series?
 		\begin{itemize}[<+(1)->]
-			\item Let me tell you about my main man Gauss\dots
+			\item Let me tell you about my main man Gauss\dots\footnote{This story may or may not be true,\\but I choose to believe it anyway.}
 			\item Pair up your values and divide by 2!
 		\end{itemize}
 		\pause
+		\begin{equation*}
+			\begin{array}{lrrrrrrrrrrrrrrrrrrrrr}
+				&    &1 &+  &2  &+  &3 &+  \dots &+ &98  &+ &99  &+ &100\\
+				&+ &100 &+ &99  &+ &98 &+  \dots &+  &3  &+  &2  &+ &1\\\hline
+				&  &101 &+ &101 &+ &101 &+ \dots &+ &101 &+ &101 &+ &101
+			\end{array}
+		\end{equation*}
+		This is $101 \times 100$, which we know is $10100$.
+
+		But we added up the numbers twice, so we need to divide by 2.
+		\[10100 \div 2 = 5050 \qquad\qquad \text{\LARGE$\therefore$}\sum_{n=1}^{100}n = 5050\]
 		\[S_n = \frac{n}{2}(a_1 + a_n)\]
 	\end{namedframe}
 	\section{Geometric Sequences}
@@ -146,5 +160,141 @@
 		\begin{sizedmath}{\Huge}
 			\sum_{k=1}^{\infty} 3\left(\frac{1}{2}\right)^{k-1}
 		\end{sizedmath}
+	\end{namedframe}
+	\begin{namedframe}{Let's try one\dots}
+		\[\sum_{n=1}^{\infty} \frac{1}{2^n} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots\]
+		\pause
+		Here are two ways to visualize this:
+		\begin{columns}
+			\begin{column}{0.5\textwidth}
+				\includegraphics[width=\textwidth]{GeometricSegment}
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\begin{tikzpicture}
+					\draw (0,0) rectangle (4,4);
+					\draw (0,0) rectangle (4,2);
+					\draw (0,2) rectangle (2,4);
+					\draw (2,2) rectangle (4,3);
+					\draw (2,3) rectangle (3,4);
+					\draw (3,3) rectangle (4,3.5);
+
+					\node at (2,1) {$\sfrac{1}{2}$};
+					\node at (1,3) {$\sfrac{1}{4}$};
+					\node at (3,2.5) {$\sfrac{1}{8}$};
+					\node at (2.5,3.5) {$\sfrac{1}{16}$};
+					\node at (3.5,3.25) {$\sfrac{1}{32}$};
+				\end{tikzpicture}
+			\end{column}
+		\end{columns}
+	\end{namedframe}
+	\begin{namedframe}{What does that sum approach?}
+		From the previous visualizations it's clear that:
+		\[\sum_{n=1}^{\infty} \frac{1}{2^n} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots = 1\]
+		Can we prove this with algebra?
+
+		\sep
+
+		\emph{Yes!}
+	\end{namedframe}
+	\begin{namedframe}{Solving algebraically}
+		\begin{proof}
+			We will call the whole sum $S$: $S = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots$
+			\pause
+
+			Next, divide $S$ by $2$: $\frac{S}{2} = \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \frac{1}{32} + \dots$
+
+			\sep
+
+			Now, \emph{subtract} them!
+
+			All the terms from $\frac{1}{4}$ onwards cancel out.
+
+			\sep
+			
+			And we get: $S - \frac{S}{2} = \frac{1}{2}$.
+
+			\sep
+
+			Simplify: $\frac{S}{2} = \frac{1}{2}$.
+
+			\sep
+
+			So: $S = 1$.
+		\end{proof}
+	\end{namedframe}
+	\begin{namedframe}{Here's the formula\dots But when does it work?}
+		We'll talk about it in a minute!
+		\[S_{\infty} = \sum_{k=1}^{\infty}a_1r^{k-1} = \frac{a_1}{1-r}\]
+		But first, let's try using this formula for the example in the previous slide!
+	\end{namedframe}
+	\begin{namedframe}{When can we use this formula?}
+		For this to work, the ratio $r$ has to be greater than $-1$ and less than $1$.
+
+		More formally:
+		\[-1 \leq r \leq 1\]
+		\[|r| < 1\]
+
+		\sep
+
+		But why?
+	\end{namedframe}
+	\begin{namedframe}{Harmonic series}
+		This is not a geometric series. Does it have a finite sum anyways?
+		\[\sum_{n=1}^{\infty} \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \dots\]
+	\end{namedframe}
+	\begin{namedframe}{\emph{Nope!}}
+		Let's look at why not:
+		\[\sum_{n=1}^{\infty} \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \dots\]
+		\[(1) + \left(\frac{1}{2}\right) + \left(\frac{1}{3} + \frac{1}{4}\right) + \left(\frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8}\right) + \left(\frac{1}{9}\right) + \dots\]
+		\[(1) + \left(\frac{1}{2}\right) + \left(\frac{1}{4} + \frac{1}{4}\right) + \left(\frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8}\right) + \left(\frac{1}{16}\right) + \dots\]
+		In each case, the top values are equal to or greater than the bottom ones.
+
+		Let's add up the bottom groups:
+		\[(1) + \left(\frac{1}{2}\right) + \left(\frac{1}{2}\right) + \left(\frac{1}{2}\right) + \left(\frac{1}{2}\right) + \dots = \infty\]
+		So our original series must also be infinite.
+	\end{namedframe}
+	\begin{namedframe}{Convergent vs.\@ divergent?}
+		\begin{description}
+			\item[Convergent series] An infinite series for which the sequence of partial sums converges.
+			\item[Divergent series] An infinite series for which the sequence of the partial sums of the series does not have a finite limit.
+		\end{description}
+	\end{namedframe}
+	\section{Some fun properties}
+	\begin{namedframe}{Properties of arithmetic series}
+		\begin{center}
+			\begin{tabular}{l|l|l}
+				Sigma Notation                                       & Converges if & Diverges if \\\hline
+				$S = \displaystyle\sum_{n=1}^{\infty}(t_1 + d(n-1))$ & Never        & Always
+			\end{tabular}
+		\end{center}
+	\end{namedframe}
+	\begin{namedframe}{Properties of geometric series}
+		\begin{center}
+			\begin{tabular}{l|l|l}
+				Sigma Notation                                 & Converges if                       & Diverges if \\\hline
+				$S = \displaystyle\sum_{n=1}^{\infty}ar^{n-1}$ & $|r| < 1$ with $S = \frac{a}{1-r}$ & $|r| \geq 1$
+			\end{tabular}
+		\end{center}
+	\end{namedframe}
+	\begin{namedframe}{Properties of harmonic series}
+		\begin{center}
+			\begin{tabular}{l|l|l}
+				Sigma Notation                                    & Converges if & Diverges if \\\hline
+				$S = \displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ & Never        & Always
+			\end{tabular}
+		\end{center}
+	\end{namedframe}
+	\begin{namedframe}{Properties of $p$-series}
+		\begin{center}
+			\begin{tabular}{l|l|l}
+				Sigma Notation                                      & Converges if & Diverges if \\\hline
+				$S = \displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$ & $p>1$        & $p \leq 1$
+			\end{tabular}
+		\end{center}
+
+		\sep
+
+		This is called the Basel Problem and it brought fame to Euler when he was 28 years old!
+		\[\sum_{n=1}^{\infty}\frac{1}{n^2} = \frac{\pi^2}{6}\]
 	\end{namedframe}
 \end{document}
