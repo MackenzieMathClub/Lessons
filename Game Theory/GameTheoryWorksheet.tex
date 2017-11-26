@@ -1,0 +1,64 @@
+\input{../WorksheetPreamble.tex}
+
+\usepackage{multicol}
+\usepackage{tikz}
+
+\newcommand{\emoji}[1]{\raisebox{-0.25\baselineskip}{\includegraphics[height=\baselineskip]{#1}}}
+
+\title{Game Theory}
+\author{Mackenzie Math Club}
+\date{November 27, 2017}
+
+\rfoot{\parbox[t]{0.35\textwidth}{\copyright{} Caroline Liu, Vincent Macri, and Samantha Unger, 2017}}
+
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{1pt}
+
+\begin{document}
+	\section{Pick Up Sticks!}
+	\begin{multicols}{2}[Try the following games of pick up sticks with a partner.]
+		\subsection{Scenario 1}
+			There are 24 sticks in total, and the players can take up to 4 sticks.
+
+			Whoever picks up the last stick \emph{loses}. Which player can guarantee a win?
+			\solutionspace{1.5in}
+		\columnbreak
+		\subsection{Scenario 2}
+			There are 35 sticks, and the players can take up to 4 sticks on their turns.
+
+			Whoever picks the last stick \emph{wins}. Which player can guarantee a win?
+			\solutionspace{1.5in}
+	\end{multicols}
+	\section{Nim}
+	\begin{multicols}{2}[Try the following games of Nim with a partner.]
+		\[3 \oplus 1 \oplus 2\]
+		\solutionspace{1in}
+
+		\[4 \oplus 5 \oplus 8\]
+		\solutionspace{1in}
+
+		\[5 \oplus 7\]
+		\solutionspace{1in}
+
+		\[2 \oplus 2\]
+		\solutionspace{1in}
+	\end{multicols}
+	\section{Chomp!}
+		Try the following games of chomp with a partner.
+
+		\centering
+		\begin{tikzpicture}
+			\draw[step=2cm,black,thick] (0,0) grid(6*2,4*2);
+			\draw (1,1) node {\Huge\emoji{Images/SkullEmoji}};
+		\end{tikzpicture}
+
+		\begin{tikzpicture}
+			\draw[step=2cm,black,thick] (0,0) grid(6*2,2*2);
+			\draw (1,1) node {\Huge\emoji{Images/SkullEmoji}};
+		\end{tikzpicture}
+
+		\begin{tikzpicture}
+			\draw[step=2cm,black,thick] (0,0) grid(4*2,4*2);
+			\draw (1,1) node {\Huge\emoji{Images/SkullEmoji}};
+		\end{tikzpicture}
+\end{document}
