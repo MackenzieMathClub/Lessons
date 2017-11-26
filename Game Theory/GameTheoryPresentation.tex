@@ -1,17 +1,24 @@
 \input{../Preamble}
 
+\usepackage{skull}
+\usepackage{tikz}
+
 \title{Game Theory}
 \author{Caroline Liu \and Vincent Macri \and Samantha Unger}
 \date{\includegraphics{../LicenseLogo}\\\copyright{} Caroline Liu, Vincent Macri, and Samantha Unger, 2017}
 
+\newcommand{\emoji}[1]{\raisebox{-0.25\baselineskip}{\includegraphics[height=\baselineskip]{#1}}}
+
+\includeonly{Chomp}
 \begin{document}
 	\frame{\titlepage}
 	\section{Introduction}
 	\begin{namedframe}{What is game theory?}
-		``Game theory is about finding a way to rig games in your favour''
+		``Game theory is about finding a way to rig games in your favour.''
 		\sep
 		\flushright
 		--- Vincent Macri
 	\end{namedframe}
 	\include{Sticks}
+	\include{Chomp}
 \end{document}

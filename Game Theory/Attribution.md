@@ -1,5 +1,9 @@
 # Licensed assets
-Emoji artwork is provided by [EmojiOne](https://www.emojione.com/) and is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode). The only change made was file type conversions.
+Emoji artwork is provided by [EmojiOne](https://www.emojione.com/) and is licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode).
+
+## Changes made to EmojiOne assets
+- Files were converted from SVG to PDF
+- The skull emoji was changed from grey to black.
 
 # Other sources and assets
 <http://www.dehn.wustl.edu/~blake/circles/talks/2009-Feb01-Emily_Ronshausen-Chomp.pdf>
