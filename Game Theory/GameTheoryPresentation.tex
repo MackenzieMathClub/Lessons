@@ -2,6 +2,7 @@
 
 \usepackage{skull}
 \usepackage{tikz}
+\usepackage{forest}
 
 \title{Game Theory}
 \author{Caroline Liu \and Vincent Macri \and Samantha Unger}
@@ -9,16 +10,19 @@
 
 \newcommand{\emoji}[1]{\raisebox{-0.25\baselineskip}{\includegraphics[height=\baselineskip]{#1}}}
 
-\includeonly{Chomp}
+\tikzset{dot/.style= {circle,fill=black,draw,scale=0.5}}
+
+\includeonly{Nim}
 \begin{document}
 	\frame{\titlepage}
 	\section{Introduction}
 	\begin{namedframe}{What is game theory?}
-		``Game theory is about finding a way to rig games in your favour.''
+		``Game theory is the study of rigging games in your favour.''
 		\sep
 		\flushright
 		--- Vincent Macri
 	\end{namedframe}
 	\include{Sticks}
+	\include{Nim}
 	\include{Chomp}
 \end{document}

@@ -1,0 +1,205 @@
+\section{Nim}
+	\sectionstart{The second game}{Vincent's favourite impartial combinatorial game.}
+	\begin{namedframe}{What is an impartial combinatorial game?}
+		\begin{itemize}
+			\item 2 players
+			\item Players alternate turns
+			\item Both players can see everything (this rules out most card games)
+			\item No chance (this rules out most board games)
+			\item Players can make the same moves -- the game is \emph{impartial} (this rules out games such as checkers and chess)
+		\end{itemize}
+	\end{namedframe}
+	\begin{namedframe}{What is Nim?}
+		Nim is similar to \emph{pick up sticks}, but with more piles.
+		
+		\sep
+
+		\begin{itemize}
+			\item In Nim, there are $n$ piles, with $k_i$ stones in each pile.
+			\item A player can take \emph{as many stones as they want} (as long as they take at least one) from only \emph{one pile} on their turn.
+			\item We will be looking at the version where the person who picks up the last stone wins, but Nim can also be played where the person who picks up last loses.
+		\end{itemize}
+
+		\sep
+
+		Here is an example Nim game:
+		\begin{center}
+			\begin{tikzpicture}
+			\draw[step=1cm,black,thick] (0,0) grid(3,1);
+				\draw (0.5,0.75) node[dot]{};
+				\draw (0.25,0.5) node[dot]{};
+				\draw (0.75,0.35) node[dot]{};
+				\draw (1.5,0.5) node[dot]{};
+				\draw (2.5,0.25) node[dot]{};
+				\draw (2.25,0.5) node[dot]{};
+			\end{tikzpicture}
+		\end{center}
+		Here: $n=3$, $k_1 = 3$, $k_2 = 1$, and $k_3 = 2$.
+	\end{namedframe}
+	\begin{namedframe}{Some Nim notation}
+		Instead of drawing out all the boxes with circles in them, we use this notation, because it's shorter and mathematicians are lazy:
+		\begin{center}
+			\begin{tikzpicture}
+			\draw[step=1cm,black,thick] (0,0) grid(3,1);
+				\draw (0.5,0.75) node[dot]{};
+				\draw (0.25,0.5) node[dot]{};
+				\draw (0.75,0.35) node[dot]{};
+				\draw (1.5,0.5) node[dot]{};
+				\draw (2.5,0.25) node[dot]{};
+				\draw (2.25,0.5) node[dot]{};
+			\end{tikzpicture}
+
+			becomes
+
+			$3 \oplus 1 \oplus 2$
+		\end{center}
+	\end{namedframe}
+	\begin{namedframe}{Let's play on the board!}
+		\[4 \oplus 5 \oplus 8\]
+		\sep
+		\[5 \oplus 7\]
+		\sep
+		\[2 \oplus 2\]
+		\sep
+		Now, let's look at how to solve Nim.
+	\end{namedframe}
+	\begin{namedframe}{First, game theory some notation}
+		Usually in game theory, we use the following notation:
+		\begin{description}
+			\item[$N$] The next player wins
+			\item[$P$] The previous player wins
+		\end{description}
+		We write who wins a give game as an ordered pair.
+
+		For example:
+		\[(1,N)\]
+		\[(1 \oplus 1,P)\]
+	\end{namedframe}
+	\begin{namedframe}{Game trees}
+		\centering
+		\only<1>{
+			\begin{forest}
+				[{$(2 \oplus 2, ?)$}
+					[]
+					[]
+				]
+			\end{forest}
+		}
+		\only<2>{
+			\begin{forest}
+				[{$(2 \oplus 2, ?)$}
+					[{$(1 \oplus 2, ?)$}
+						[{$(1 \oplus 1, ?)$}
+							[{$(1, ?)$}]
+						]
+						[{$(2, ?)$}]
+						[{$(1, ?)$}]
+					]
+					[{$(2, ?)$}]
+				]
+			\end{forest}
+		}
+		\only<3>{
+			\begin{forest}
+				[{$(2 \oplus 2, ?)$}
+					[{$(1 \oplus 2, ?)$}
+						[{$(1 \oplus 1, ?)$}
+							[{$(1, N)$}]
+						]
+						[{$(2, N)$}]
+						[{$(1, N)$}]
+					]
+					[{$(2, N)$}]
+				]
+			\end{forest}
+		}
+		\only<4>{
+			\begin{forest}
+				[{$(2 \oplus 2, P)$}
+					[{$(1 \oplus 2, N)$}
+						[{$(1 \oplus 1, P)$}
+							[{$(1, N)$}]
+						]
+						[{$(2, N)$}]
+						[{$(1, N)$}]
+					]
+					[{$(2, N)$}]
+				]
+			\end{forest}
+		}
+	\end{namedframe}
+	\begin{namedframe}{What are the rules for game trees?}
+		\begin{itemize}
+			\item If the only option is to leave your opponent with an $N$, then it is a $P$.
+			\item If you can leave your opponent with a $P$, then it is an $N$.
+		\end{itemize}
+
+		\sep
+
+		Game trees are useful, but they take a long time to draw out.
+
+		For example, consider the game tree for:
+		\[53 \oplus 242 \oplus 21 \oplus 5 \oplus 13 \oplus 241\]
+		It will take a \emph{very} long time to draw this out.
+
+		For some games, including Nim, there is a better way.
+	\end{namedframe}
+	\begin{namedframe}{Binary}
+		First, some quick maths review of base systems and binary.
+
+		In base 10 (decimal) the number $1452$ is really just short for:
+		\[1452_{10} = 1 \times 10^3 + 4 \times 10^2 + 5 \times 10^1 + 2 \times 10^0\]
+
+		In base 2 (binary), we only have the digits $0$ and $1$. So:
+		\[1001_2 = 1 \times 2^3 + 0 \times 2^2 + 0 \times 2^1 + 1 \times 2^0 = 9_{10}\]
+	\end{namedframe}
+	\begin{namedframe}{Binary and Nim}
+		Take the Nim game $2 \oplus 4 \oplus 7 \oplus 9 \oplus 15$.
+
+		Convert the numbers to binary:
+		\[2_{10} = 10_2\]
+		\[4_{10} = 100_2\]
+		\[7_{10} = 111_2\]
+		\[9_{10} = 1001_2\]
+		\[15_{10} = 1111_2\]
+	\end{namedframe}
+	\begin{namedframe}{Sum the binary digits}
+		\begin{equation*}
+			\begin{array}{ccccccccc}
+				2_{10} &\oplus& 4_{10} &\oplus& 3_{10} &\oplus& 9_{10} &\oplus& 15_{10}\\
+				10_2   &\oplus& 100_2  &\oplus& 111_2  &\oplus& 1001_2 &\oplus& 1111_2
+			\end{array}
+		\end{equation*}
+		\begin{equation*}
+			\begin{array}{rrrr}
+				0 & 0 & 1 & 0\\
+				0 & 1 & 0 & 0\\
+				0 & 1 & 1 & 1\\
+				1 & 0 & 0 & 1\\
+				1 & 1 & 1 & 1\\\hline
+				2 & 3 & 3 & 3
+			\end{array}
+		\end{equation*}
+
+		\sep
+
+		If any column sum is odd, it is a next player win. If no column sums are odd, it is a previous player win.
+
+		\sep
+
+		How do we apply this?
+	\end{namedframe}
+	\begin{namedframe}{Applying the general Nim solution}
+		Let's go through the following game together on the board, keeping in mind that we want to leave the other player with no odd column sums.
+		\sep
+		\[2 \oplus 5 \oplus 4\]
+	\end{namedframe}
+	\begin{namedframe}{Proof of general Nim solution}
+		The proof is left as an exercise to the reader, but I'll give two hints:
+		\begin{itemize}
+			\item It is \emph{not} a coincidence that the $\oplus$ symbol used in Nim is the same symbol used for XOR in boolean algebra.
+			\item You can prove it by induction.
+		\end{itemize}
+		\sep
+		If there is time, we can take it up at the end.
+	\end{namedframe}
