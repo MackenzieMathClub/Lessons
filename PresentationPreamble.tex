@@ -14,6 +14,7 @@
 
 \setbeamertemplate{frametitle continuation}[from second][\hfill\insertcontinuationtext]
 
+% Table of contents at start of each section
 \AtBeginSection[] {%
 	\begin{frame}
 		\frametitle{Table of Contents}
@@ -21,6 +22,7 @@
 	\end{frame}
 }
 
+% Environments for math
 \newenvironment{compactmath}[1][\normalsize]%
 	{\begin{minipage}{\textwidth}\vspace{-0.5\baselineskip}#1\begin{equation*}}
 	{\end{equation*}\end{minipage}}
@@ -29,6 +31,7 @@
 	{\begingroup#1\begin{equation*}}
 	{\end{equation*}\endgroup}
 
+% Environments for consistent frame use
 \newenvironment{namedframe}[1]%
 	{\begin{frame}\frametitle{#1}\framesubtitle{\secname}}
 	{\end{frame}}
@@ -37,13 +40,19 @@
 	{\begin{frame}[allowframebreaks]\frametitle{#1}\framesubtitle{\secname}}
 	{\end{frame}}
 
+% Frames for emphasis
 \newcommand{\sectionstart}[2]{\begin{frame}\frametitle{#1}\centering\Huge\secname\\\Large#2\end{frame}}
 \newcommand{\bigframe}[1]{\begin{namedframe}{#1}\Huge\centering#1\end{namedframe}}
 
-\newcommand{\sep}{\pause\vspace{1ex}}
-\newcommand{\varsep}[1]{\pause\vspace{#1}}
+% Spacing commands
+\newcommand{\sep}{\\\pause\vspace{1ex}}
+\newcommand{\varsep}[1]{\\\pause\vspace{#1}}
 
 \newcommand{\vertspace}{\\\vspace{1ex}}
-\newcommand{\varvertspace}[1]{\vspace{#1}}
+\newcommand{\varvertspace}[1]{\\\vspace{#1}}
 
+% Text formatting
 \DeclareTextFontCommand{\emph}{\bfseries}
+
+% Macros for math
+\newcommand{\such}{\ |\ }
