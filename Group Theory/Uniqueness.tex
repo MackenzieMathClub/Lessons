@@ -1,0 +1,51 @@
+\section{Uniqueness}
+\begin{namedframe}{Uniqueness of the identity element}
+	Is the identity element of a group unique? \pause Yes.
+	\begin{proof}
+		Take the group $(G, \cdot)$.
+
+		Assume there are two identity elements, $e$ and $f$, and $e \neq f$. Then:
+		\begin{align*}
+			e \cdot f &= f \cdot e\\
+			e \cdot f &= e\\
+			f \cdot e &= f\\
+			\therefore e &= f
+		\end{align*}
+		We have a contradiction. Therefore our original statement must be false, and there is only one identity element.
+	\end{proof}
+\end{namedframe}
+\begin{namedframe}{Uniqueness of the inverse element}
+	Is the inverse of an element in a group unique? \pause Yes.
+	\begin{proof}
+		Take the group $(G, \cdot)$ with the identity element $e$.
+
+		Assume $a$ has two inverses, $b$ and $c$, and $b \neq c$:
+		\vspace{-2ex}
+		\begin{align*}
+			a \cdot b = e &\qquad a \cdot c = e\\
+			b &= b \cdot e\\
+			b &= b \cdot (a \cdot c)\\
+			b &= (b \cdot a) \cdot c\\
+			b &= e \cdot c\\
+			\therefore b &= c
+		\end{align*}
+		We have a contradiction. Therefore our original statement must be false, and there is only one inverse of $a$.
+	\end{proof}
+\end{namedframe}
+\begin{namedframe}{What did we just do?}
+	We just proved for \emph{all} groups that there is only one identity element, and only one inverse element for all $a \in G$.
+
+	This means that we just proved:
+	\begin{enumerate}
+		\item If $a \in \mathbb{Z}$, there is only one $b \in \mathbb{Z}$ such that $a + b = 0$.
+		\item If $a \in \mathbb{R}$, there is only one $b \in \mathbb{R}$ such that $a + b = 0$.
+		\item For all $a \in \mathbb{R^*}$ there is exactly one $a^{-1}$ such that $a \times a^{-1} = 1$.
+		\item For all $n$: for all $a \in \mathbb{Z}_n$ there is only one $b$ such that $a + b = 0$.
+		\item For all $n$: for all $a \in \mathbb{Z}_n^*$, there is exactly one $a^{-1}$ such that $a \times a^{-1} = 1$.
+		\item There is no more than one correct answer when rearranging a linear equation.
+		\item While $(\mathbb{R}, -)$, is not a group, subtraction is the inverse of addition.
+		\item While $(\mathbb{R}, \div)$, is not a group, multiplication is the inverse of multiplication.
+		\item Division by $0$ is undefined.
+		\item If $a \in \mathbb{Q}$, there is only one $b \in \mathbb{Q}$ such that $a + b = 0$.
+	\end{enumerate}
+\end{namedframe}

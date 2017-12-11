@@ -1,0 +1,164 @@
+\section{Examples of Groups}
+\begin{namedframe}{What is a cat?}
+	Instead of formally defining groups, let's look at them intuitively first
+	\sep
+	For now, what is a cat?
+\end{namedframe}
+\begin{namedframe}{Group 1: $(\mathbb{Z}, +)$ examples}
+	This group is the group of all integers. Other than the integers, we also have $+$, the addition operation.
+
+	Let's look at some examples of using $+$ on $\mathbb{Z}$:
+	\[2 + 2 = 4\]
+	\[4 + (-1) = 3\]
+	\[3 + 9 = 12\]
+	\[9 + 3 = 12\]
+	\[0 + 25 = 25\]
+	\[(-10) + 0 = -10\]
+	\[5 + (-5) = 0\]
+	\[(-14) + 14 = 0\]
+	\[0 + 0 = 0\]
+\end{namedframe}
+\begin{namedframe}{Group 1: $(\mathbb{Z}, +)$ identity}
+	Notice that for the group $(\mathbb{Z}, +)$ that:
+	\[a + 0 = a = 0 + a\]
+	For any element in $\mathbb{Z}$, adding $0$ yields the same element.
+	\sep
+	Because of this, we will call $0$ the identity element.
+\end{namedframe}
+\begin{namedframe}{Group 1: $(\mathbb{Z}, +)$ inverse}
+	Notice that for the group $(\mathbb{Z}, +)$, every element has an element such that the sum of the two elements is equal to the identity element.
+	\vertspace
+	In other words, for any $a \in \mathbb{Z}$, there exists $b \in \mathbb{Z}$ such that:
+	\[a + b = 0 \such b = -a\]
+	We will call $b$ the inverse of $a$. In this group, $a$ is also the inverse of $b$.
+	\sep
+	What is the inverse of $5$ in this group?
+	\sep
+	Is it true for any group that if the inverse of $a$ is $b$, the inverse of $b$ will be $a$?
+\end{namedframe}
+\begin{namedframe}{Group 2: $(\mathbb{Q} \setminus \{0\}, \times)$ examples}
+	Let's look at the group of rational numbers, not including $0$, related to each other by multiplication:
+	\[\frac{4}{1} \times \frac{2}{3} = \frac{8}{3}\]
+	\[\frac{1}{1} \times \frac{3}{1} = \frac{3}{1}\]
+	\[\frac{3}{1} \times \frac{1}{3} = \frac{1}{1}\]
+\end{namedframe}
+\begin{namedframe}{Group 2: $(\mathbb{Q} \setminus \{0\}, \times)$ identity}
+	What is the identity element of $(\mathbb{Q} \setminus \{0\}, \times)$?
+	\sep
+	The identity element is $\frac{1}{1}$, as that is the only element $b$ such that $a \times b = a$.
+\end{namedframe}
+\begin{namedframe}{Group 2: $(\mathbb{Q} \setminus \{0\}, \times)$ inverse}
+	What is the inverse element of $\frac{a}{b}$ in $(\mathbb{Q} \setminus \{0\}, \times)$?
+	\sep
+	\[\frac{a}{b} \times \frac{?}{?} = \frac{1}{1}\]
+	\sep
+	The inverse of $\frac{a}{b}$ in this group is $\frac{b}{a}$.
+	\vertspace
+	We write this as $c^{-1}$ is the inverse of $c$, and we will also use this notation for operations other than multiplication.
+\end{namedframe}
+\begin{namedframe}{Group 3: $(\{-1, 1\}, \times)$ all at once}
+	Let's look at a group with a finite number of elements. Since it's finite, we can draw out a multiplication table.
+	\begin{equation*}
+		\begin{array}{r|rr}
+			\times & -1 & 1 \\\hline
+			-1     &  1 & -1\\
+			1      & -1 & 1 \\
+		\end{array}
+	\end{equation*}
+	Note that group this is a subset\footnote{Not \textit{technically} the right word, but we'll talk\\more about that later.} of the last group we looked at.
+	\sep
+	What is the identity element? \pause $1$
+	\sep
+	What is the inverse of $1$? \pause $1$
+	\sep
+	What is the inverse of $-1$? \pause $-1$
+\end{namedframe}
+\begin{namedframe}{Modular arithmetic}
+	All of our groups so far have had the property that the operation performed on any two elements in the group yields a third element also in the group. What else has this property? \pause Hint: there's one on the wall of every classroom.)
+	\sep
+	Clocks do! On a clock, $11 + 2 = 1$. This is called modular arithmetic, because we do this kind of math using the modulo operation. You can think of modular arithmetic as wrapping around. Modular arithmetic is only defined for the integers.
+	\sep
+	Simply put, $a = b \mod c$ means that the remainder of $a \div c$ is equal to the remainder of $b \div c$. Or, more formally:
+	\[a = b \mod c \iff a - b = kc \such k \in \mathbb{Z}\]
+	Some people will use $\equiv$ (equivalent) instead of $=$ when talking about modulo. Both notations are acceptable.
+\end{namedframe}
+\begin{namedframe}{Group 4: $(\mathbb{Z}_{12}, +)$ definition}
+	We start by defining the set that makes up the elements of our group:
+	\[\mathbb{Z}_{12} \coloneqq \{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11\}\]
+	And we define $+$ to work as normal, but with the additional property that:
+	\[a + b = a + b \mod 12\]
+\end{namedframe}
+\begin{namedframe}{Group 4: $(\mathbb{Z}_{12}, +)$ examples}
+	Let's go through some examples of our new addition in this group:
+	\[1 + 4 = 5 \mod 12\]
+	\[3 + 0 = 3 \mod 12\]
+	\[11 + 3 = 2 \mod 12\]
+	We can think of performing $+$ in $(\mathbb{Z}_{12}, +)$ to be the same as performing $+$ in $(\mathbb{Z}, +)$, except if the result is outside of $\mathbb{Z}_{12}$, we repeatedly add or subtract $12$ until our answer is in $\mathbb{Z}_{12}$. With this definition, we can show that we can convert numbers that are outside of $\mathbb{Z}_{12}$ to be inside of $\mathbb{Z}_{12}$.
+	\sep
+	For example, since $4 = 52 \mod 12$ and $5 = 53 \mod 12$, we can write that:
+	\[52 + 53 = 105 = 9 \mod 12 \qquad \text{or} \qquad 4 + 5 = 9 \mod 12\]
+	So it doesn't matter if we perform modulo before or after the addition. We get the same answer. Cool!
+\end{namedframe}
+\begin{namedframe}{Group 4: $(\mathbb{Z}_{12}, +)$ identity}
+	What is the identity in $\mathbb{Z}_{12}$?
+	\sep
+	With this, multiple numbers satisfy the property for an identity.
+	For example:
+	\[5 + 12 = 5 \mod 12\]
+	\[5 + 24 = 5 \mod 12\]
+	\[5 + 0 = 5 \mod 12\]
+	And this works for any multiple of $12$. Are there multiple identities?
+	\sep
+	No. Because of these, \emph{only} $0 \in \mathbb{Z}_{12}$. So $0$ is the identity.
+	\sep
+	The reason all multiple of $12$ work is that $0 = 12k \mod 12 \such k \in \mathbb{Z}$. In other words, in $\mathbb{Z}_{12}$, all multiples of $12$ are equivalent to $0$.
+\end{namedframe}
+\begin{namedframe}{Group 4: $(\mathbb{Z}_{12}, +)$ inverse}
+	What is the general form for the inverse of $a$ in $(\mathbb{Z}_{12}, +)$?
+	\[a + a^{-1} = 0 \mod 12\]
+	\pause
+	At first, you might think that $a^{-12} = 12 - a$. It seems to work:
+	\[4 + (12 - 4) = 4 + 8 = 12 = 0 \mod 12\]
+	But what if $a = 0$? Does it still work?
+	\[0 + 12 = 12 = 0 \mod 12\]
+	\pause
+	But $12$ is outside of $\mathbb{Z}_{12}$!
+
+	That's okay. Remember that in $\mathbb{Z}_{12}$, $12 = 0$. So, the inverse of $0$ is $0$!
+
+	We can draw out a table of inverses:
+	\begin{equation*}
+		\begin{array}{c|cccccccccccc}
+			a      & 0 & 1  & 2  & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11\\\hline
+			a^{-1} & 0 & 11 & 10 & 9 & 8 & 7 & 6 & 5 & 4 & 3 &  2 &  1
+		\end{array}
+	\end{equation*}
+\end{namedframe}
+\begin{namedframe}{Group 5: $(\mathbb{Z}_{5}^*, \times)$ all at once}
+	Ignore the $^*$ in the group name, let's look at $(\mathbb{Z}_{5}, \times)$ for now.
+	\sep
+	What is the identity? \pause $1$
+	\sep
+	What are the inverses?
+
+	Let's draw out a table:
+	\begin{equation*}
+		\begin{array}{c|ccccc}
+			a      & 0 & 1  & 2 & 3 & 4\\\hline
+			a^{-1} & * & 1  & * & 2 & 4
+		\end{array}
+	\end{equation*}
+	$0$ does not have an inverse! We will define something to deal with this:
+	\begin{block}{Unit}
+		Let $a$ be a number in a set $G$.
+
+		We will call $a$ a \emph{unit} if $a^{-1}$ exists. The set of units of $G$ will be called $G^*$.
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Group 6: $(\mathrm{Sym}(4), *)$.}
+	This group is different. It's made up of diagrams with 4 points on the top, 4 points on the bottom, and lines between the points.
+	\sep
+	Let's look at this on the board.
+	\sep
+	Interesting! With this group, $a * b \neq b * a$.
+\end{namedframe}
