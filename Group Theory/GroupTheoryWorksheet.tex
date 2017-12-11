@@ -1,0 +1,77 @@
+\input{../WorksheetPreamble.tex}
+
+\title{Group Theory}
+\author{Mackenzie Math Club}
+\date{December 11, 2017}
+
+\rfoot{\parbox[t]{0.35\textwidth}{\copyright{} Vincent Macri, 2017}}
+
+\begin{document}
+	\section{Quaternions}
+		For this section, consider the group $(\mathcal{Q}_8, \times)$, where $\mathcal{Q}_8$ is the set of quaternion elements. That is, $\mathcal{Q}_8 \coloneqq \{-1, 1, -i, i, -j, j, -k, k\}$, and multiplication has the following additional rules:
+		\[i^2 = j^2 = k^2 = -1 \qquad ij = k\]
+		\vspace{-10ex}
+		\subsection{$ji$}
+			What is $ji$? Remember, multiplication is not commutative for quaternions, so $ij \neq k$!
+			\solutionspace{1ex}
+		\subsection{Multiplication table}
+			Draw out the multiplication table for this group:
+			\begin{equation*}
+				\begin{array}{r|c|c|c|c|c|c|c|c}
+					\times & \mathmakebox[1cm]{-1} & \mathmakebox[1cm]{1} & \mathmakebox[1cm]{-i} & \mathmakebox[1cm]{i} & \mathmakebox[1cm]{-j} & \mathmakebox[1cm]{j} & \mathmakebox[1cm]{-k} & \mathmakebox[1cm]{k}\\\hline
+					-1     &    &   &    &   &    &   &    &  \\\hline
+					1      &    &   &    &   &    &   &    &  \\\hline
+					-i     &    &   &    &   &    &   &    &  \\\hline
+					i      &    &   &    &   &    &   &    &  \\\hline
+					-j     &    &   &    &   &    &   &    &  \\\hline
+					j      &    &   &    &   &    &   &    &  \\\hline
+					-k     &    &   &    &   &    &   &    &  \\\hline
+					k      &    &   &    &   &    &   &    &
+				\end{array}
+			\end{equation*}
+	\section{Subgroups of $(\mathbb{Z}, +)$}
+		\subsection{$2\mathbb{Z}$}
+			We will say that the subset $2\mathbb{Z} \subset \mathbb{Z}$, where $2\mathbb{Z} \coloneqq \{\dots, -6, -4, -2, 0, 2, 4, 6, \dots\}$. That is, $2\mathbb{Z}$ is the set of even integers.
+
+			We will call $(2\mathbb{Z}, +)$ a subgroup of $(\mathbb{Z}, +)$ is $(2\mathbb{Z}, +)$ is also a group. Is it a group? Show that it either does or doesn't satisfy all four group axioms.
+		\subsection{$\{-4, -2, 0, 2, 4\}$}
+			Is $(\{-4, -2, 0, 2, 4\}, +)$ a subgroup of $(\mathbb{Z}, +)$? Show that it either does or doesn't satisfy all four group axioms.
+	\newpage
+	\section{Order of a group}
+		Similar to the cardinality of a set $S$, the order of a group $(G, \cdot)$ is defined as the number of elements in $G$. We write this as $|G|$.
+
+		\subsection{$(\mathbb{Z}_{12}, +)$}
+			For the group $(\mathbb{Z}_{12}, +)$, what is $|\mathbb{Z}_{12}|$?
+	\section{Equivalent groups}
+		Fill out the follow multiplication tables.
+
+		While they are called multiplication tables, we still use the group's operation, which may or may not be multiplication.
+		\subsection{$(\mathbb{Z}_6^*, \times)$}
+			Remember, $\mathbb{Z}_6^* \coloneqq \{1, 5\}$.
+			\begin{equation*}
+				\begin{array}{r|c|c}
+					\times & \mathmakebox[1cm]{1} & \mathmakebox[1cm]{5}\\\hline
+					1      &                      &                     \\\hline
+					5      &                      &
+				\end{array}
+			\end{equation*}
+		\subsection{$(\mathbb{Z}_2, +)$}
+			Remember, $\mathbb{Z}_2 \coloneqq \{0, 1\}$.
+			\begin{equation*}
+				\begin{array}{r|c|c}
+					+ & \mathmakebox[1cm]{0} & \mathmakebox[1cm]{1}\\\hline
+					0 &                      &                     \\\hline
+					1 &                      &
+				\end{array}
+			\end{equation*}
+		\subsection{$(\{a,b\}, \cdot)$}
+			You may have noticed a pattern by now for groups with an order of $2$. Without knowing the operation or the elements, fill in the following:
+			\begin{equation*}
+				\begin{array}{r|c|c}
+					\cdot & \mathmakebox[1cm]{a} & \mathmakebox[1cm]{b}\\\hline
+					a     &                      &                     \\\hline
+					b     &                      &
+				\end{array}
+			\end{equation*}
+			Remember that a group must have an identity. Based on how you filled the above tables, is $a$ or $b$ the identity element in this final question?
+\end{document}
