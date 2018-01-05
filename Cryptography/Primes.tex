@@ -1,0 +1,91 @@
+\section{Primes}
+\begin{namedframe}{What is a prime number?}
+	A \emph{prime number} is a positive integer that is only divisible by $1$ and itself.
+	\begin{examples}
+		\begin{compactmath}
+			\mathbb{P} = \{2, 3, 5, 7, 11, 13, 17, \dots\}
+		\end{compactmath}
+	\end{examples}
+	If an integer greater than $1$ is not prime, it is called a \emph{composite number}.
+	\vertspace
+	$1$ is special, and is called the \emph{unit number}
+	\sep
+	\begin{proof}[Proof $1$ is not prime.]
+		In the past, some mathematicians said that $1$ is prime.
+		All of them are dead now.
+		\[\therefore 1 \notin \mathbb{P} \qedhere\]
+	\end{proof}
+\end{namedframe}
+\begin{namedframe}{The largest prime number}
+	The largest known prime number\footnote{As of January 5th, 2018} is:
+	\[M_{\num{77232917}} = 2^{\num{77232917}} - 1\]
+	If you were to print this number out, it would be 6055 pages long!
+	\vertspace
+	This prime was discovered by Jonathan Pace on December 26, 2017 after 6 days of continuous computer computations.
+	The discovery was published on January 3, 2018.
+	\sep
+	This number is a \emph{Mersenne prime}.
+	These are prime numbers of the form $2^n - 1$, and we label these primes as $M_n$ for short.
+	\sep
+	What's special and useful about Mersenne primes?
+	\pause
+	Not much.
+\end{namedframe}
+\begin{namedframe}{How many primes are there?}
+	Is the number of primes finite?
+	\sep
+	No! There are infinite prime numbers!
+
+	This was proved thousands of years ago by Euclid.
+\end{namedframe}
+\begin{namedframe}{Proof of infinite primes}
+	Assume the list of primes is finite, and there are only $n$ prime numbers. We will call our list of prime numbers $P$.
+	\[P = \{p_1, p_2, \dots , p_{n-1}, p_n\}\]
+	Where $p_k$ is the $k$th prime number.
+	\sep
+	Now, let $m$ be the product of all numbers in $P$ plus $1$.
+	\[m = (p_1 \times p_2 \times \dots \times p_{n-1} \times p_n) + 1 = \left(\sum_{i=1}^n p_i\right) + 1\]
+	$m$ is either prime or not prime.
+	Let's look at both cases.
+\end{namedframe}
+\begin{namedframe}{Proof of infinite primes: $m$ is prime}
+	First, let's consider the case that $m$ is prime.
+	\sep
+	Note that $m$ is not in our original list, $P$.
+	\sep
+	If $m$ is prime, our original list is incomplete, and there are more prime numbers than we listed.
+\end{namedframe}
+\begin{namedframe}{Proof of infinite primes: $m$ is not prime}
+	If $m$ is not prime, then it must be divisible by a prime number.
+
+	Notice that $m$ cannot be divisible by any numbers in $P$, as they would not divide a number that is a multiple of themselves plus $1$.
+	\sep
+	For example:
+	\vspace{-1ex}
+	\[P = \{2,3,5,7,11,13\}\]
+	\vspace{-3ex}
+	\[m = 2 \times 3 \times 5 \times 7 \times 11 \times 13 + 1 = \num{30031}\]
+	\varsep{-5ex}
+	\begin{center}
+		\begin{minipage}{0.45\textwidth}
+			\begin{align*}
+				\num{30031} \bmod 2 &= 1\\
+				\num{30031} \bmod 3 &= 1\\
+				\num{30031} \bmod 5 &= 1
+			\end{align*}
+		\end{minipage}
+		\begin{minipage}{0.45\textwidth}
+			\begin{align*}
+				\num{30031} \bmod 7  &= 1\\
+				\num{30031} \bmod 11 &= 1\\
+				\num{30031} \bmod 13 &= 1
+			\end{align*}
+		\end{minipage}
+	\end{center}
+	\varvsep{-2ex}
+	Here, we can see that since $\num{30031}$ is a multiple plus $1$ of every number in $P$, no numbers in $P$ will divide it.
+	\pause
+	But if $\num{30031}$ is not prime, then it divisible by a prime number, so there must be some prime numbers missing from our original list.
+	\pause
+	$\num{30031}$ is divisible by $59$ and $509$, so these numbers are missing from our list.
+\end{namedframe}

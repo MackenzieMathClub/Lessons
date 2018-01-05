@@ -1,0 +1,35 @@
+\section{Modular Arithmetic}
+\begin{namedframe}{Quick review}
+	We define the \alert{$\bmod$} operator as being the remainder when dividing two numbers.
+	That is:
+	\[a \bmod b = \text{the remainder of } a \div b\]
+	In some programming languages, modulo is written as \alert{$\%$} or \alert{$\operatorname{rem}$}.
+	Use whichever notation you are most comfortable with.
+	\begin{examples}
+		\centering
+		\begin{minipage}{0.45\textwidth}
+			\[4 \bmod 2 = 0\]
+			\[5 \bmod 2 = 1\]
+		\end{minipage}
+		\begin{minipage}{0.45\textwidth}
+			\[7 \bmod 3 = 1\]
+			\[9 \bmod 5 = 4\]
+		\end{minipage}
+	\end{examples}
+	\footnotesize
+	The definition of modulo (mod for short) is a bit trickier with negative numbers.
+	It also doesn't matter for today, as we're only looking at mod with positive numbers.
+\end{namedframe}
+\begin{namedframe}{Divisibility}
+	We will also introduce a new notation, which is more of a shortcut.
+
+	If $b$ divides $a$ with no remainder, then we will write $b \divides a$.
+
+	More formally:
+	\[b \divides a \equiv a \bmod b = 0\]
+
+	Or:
+	\[b \divides a \iff a = bc\]
+
+	Where $a$, $b$, and $c$ and positive integers.
+\end{namedframe}
