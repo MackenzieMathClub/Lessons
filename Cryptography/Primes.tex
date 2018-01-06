@@ -89,3 +89,51 @@
 	\pause
 	$\num{30031}$ is divisible by $59$ and $509$, so these numbers are missing from our list.
 \end{namedframe}
+\begin{namedframe}{Primality}
+	How do we check if a number is prime?
+	\sep
+	How do we check if a number is prime \emph{quickly}?
+	\sep
+	With a \emph{very} fast computer. Algorithms exist (some of which run in polynomial time) but they are \emph{very} slow.
+
+	Here, ``quickly'' means the computer will finish before we die.
+\end{namedframe}
+\begin{namedframe}{Factors}
+	\begin{theorem}[The Unique Factorization Theorem]
+		Every positive integer has a unique representation as a product of prime numbers.
+
+		That is, for all numbers $n \in \mathbb{Z}^+$:
+		
+		\[n = p_1^{a_1} \times p_2^{a_2} \times \dots \times p_k^{a_k}\]
+
+		Where $p_i$ is prime, and $a_i$ is a positive integer.
+	\end{theorem}
+	\pause
+	\begin{example}[180]
+		\[180 = 2^2 \times 3^2 \times 5\]
+		\[180 = 2 \times 2 \times 3 \times 3 \times 5\]
+	\end{example}
+\end{namedframe}
+\begin{namedframe}{Factoring}
+	How do we factor a number?
+	\sep
+	How do we factor a \emph{large} number?
+	\sep
+	Try this one:
+	\begin{block}{RSA-2048}
+		\tiny
+		\ttfamily
+		251959084756578934940271832400483985714292821262040320277771378360436620207075955562640185258807
+		844069182906412495150821892985591491761845028084891200728449926873928072877767359714183472702618
+		963750149718246911650776133798590957000973304597488084284017974291006424586918171951187461215151
+		726546322822168699875491824224336372590851418654620435767984233871847744479207399342365848238242
+		811981638150106748104516603773060562016196762561338441436038339044149526344321901146575444541784
+		240209246165157233507787077498171257724679629263863563732899121548314381678998850404453640235273
+		81951378636564391212010397122822120720357
+	\end{block}
+	\pause
+	This number has two factors. Nobody knows what they are.
+
+	There was a $\$\num{200000}$ prize to factor this number.
+	People had over 15 years to factor it, but nobody was able to before the contest period ended.
+\end{namedframe}

@@ -1,0 +1,34 @@
+\begin{frame}{A puzzle}
+	\emph{Alice} and \emph{Bob} are trying to send each other a message without \emph{Eve the Eavesdropper} being able to read it.
+	\vertspace
+	There are some positive integers in each column. \emph{Only Alice} can access the numbers in her column. \emph{Only Bob} can access the numbers in his column. \emph{Anyone} can access the numbers in the \alert{public} column.
+	\begin{columns}
+		\begin{column}{0.2\textwidth}
+			\begin{block}{Alice}
+				\centering
+				$a$
+
+				$a$ is between $1$ and $n$.
+			\end{block}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{alertblock}{Public}
+				\centering
+				$g$ \hspace{2em} $n$
+
+				$g$ is a small prime number.
+
+				$n$ is a \emph{very} big number.
+			\end{alertblock}
+		\end{column}
+		\begin{column}{0.2\textwidth}
+			\begin{block}{Bob}
+				\centering
+				$b$
+
+				$b$ is between $1$ and $n$.
+			\end{block}
+		\end{column}
+	\end{columns}
+	If Eve can read anything Alice and Bob send to each other, how can Alice and Bob both know a number without Eve knowing that number as well?
+\end{frame}

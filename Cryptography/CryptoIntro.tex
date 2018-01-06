@@ -1,0 +1,36 @@
+\section{Introduction to Cryptography}
+\begin{namedframe}{What are factors used for?}
+	Factorization of numbers is very useful in cryptography.
+
+	The reason for this is that factoring large numbers takes a \emph{very} long time, but the maths for checking factorization are quick.
+
+	We can use this to develop a way to encode messages so they can only be read by certain people.
+	This is called cryptography.
+\end{namedframe}
+\begin{namedframe}{What is cryptography}
+	Simply put, cryptography is the study of ways to encrypt messages.
+	\vertspace
+	Encryption is when you transform a message so that it cannot easily be read by someone without a key.
+	Encryption is like a lock, but instead of locking your house, it locks information.
+	\vertspace
+	The use of encryption goes back thousands of years.
+\end{namedframe}
+\begin{namedframe}{The Caesar cipher}
+	One example of encryption was used by Julius Caesar to keep military messages protected from spies.
+
+	Caesar's encryption worked like this:
+	\sep
+	Pick a number, $n$, between $1$ and $25$.
+
+	Shift every letter in the message that many letters to the right, wrapping around when you reach z.
+	\sep
+	For example, with $n = 3$:
+
+	\texttt{Plaintext message: `Crypto is fun!'}
+
+	\texttt{Encrypted message: `Fubswr lv ixq!'}
+
+	Caesar's generals knew what value for $n$ Caesar used, and would reverse the process to decode his messages.
+	\sep
+	Obviously, this isn't very secure. Why?
+\end{namedframe}
