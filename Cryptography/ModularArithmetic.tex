@@ -20,16 +20,36 @@
 	The definition of modulo (mod for short) is a bit trickier with negative numbers.
 	It also doesn't matter for today, as we're only looking at mod with positive numbers.
 \end{namedframe}
-\begin{namedframe}{Divisibility}
-	We will also introduce a new notation, which is more of a shortcut.
-
-	If $b$ divides $a$ with no remainder, then we will write $b \divides a$.
-
-	More formally:
-	\[b \divides a \equiv a \bmod b = 0\]
-
-	Or:
-	\[b \divides a \iff a = bc\]
-
-	Where $a$, $b$, and $c$ and positive integers.
+\begin{namedframe}{Calculating modulo}
+	While we could do long division to find the remainder when we want to calculate modulo, I prefer to use this formula:
+	\[a \bmod b = a - b \floor*{\frac{a}{b}}\]
+	Where $\floor{x}$ is the floor function, which rounds a number \emph{down} to an integer.
+	\sep
+	There are other method, but I think this one is the hardest to mess up.
+	Use whatever method you are most comfortable with.
+\end{namedframe}
+\begin{namedframe}{Inverse of modular multiplication}
+	How do we do division in modular arithmetic?
+	\sep
+	Division is the inverse of multiplication.
+	\sep
+	Recall from the \emph{group theory} lesson that the identity element in multiplication is $1$.
+	\sep
+	So, for modulus $n$, $b$ is the inverse of $a$ when:
+	\[a \times b \mod n = 1 \such 0 < a, b < n\]
+	\pause
+	Not all numbers have an inverse in modular arithmetic.
+	\vertspace
+	It turns out $a$ has an inverse in $\bmod\ n$ if and only if $a$ and $n$ are coprime.
+	\sep
+\end{namedframe}
+\begin{namedframe}{Inverse of modular multiplication examples}
+	\[3 \times 7 \mod 20 = 1\]
+	Here, $7$ is the inverse of $3$, and $3$ is the inverse of $7$.
+	\sep
+	$2$ does \emph{not} have an inverse modulo $4$.
+	\[2 \times b \mod 4 = 1\]
+	There is no integer value for $b$ that satisfies this equation.
+	\sep
+	We will soon learn the algorithm to find the inverse to modular multiplication.
 \end{namedframe}

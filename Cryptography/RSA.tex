@@ -1,0 +1,67 @@
+\section{RSA}
+\begin{namedframe}{RSA encryption}
+	The RSA encryption algorithm was originally classified before being rediscovered by three people with the initials R, S, and A in 1977.
+	RSA encryption or a variant of it is used today in many online systems, especially for setting up more permanent encrypted sessions.
+	\sep
+	Today, we will learn how to encrypt messages using the RSA system.
+	\vertspace
+	While RSA has not been broken by anyone, there are systems that are considered to be \emph{more} secure because they provide something called ``perfect forward secrecy''. However, a lot of these systems are similar to, or even use RSA.
+\end{namedframe}
+\begin{namedframe}{RSA overview}
+	What is RSA?
+	\begin{itemize}[<+(1)->]
+		\item Public keys
+		\item Private keys
+		\item Padlocks
+		\item Factoring is hard
+	\end{itemize}
+	\pause
+	Alice and Bob.
+\end{namedframe}
+\begin{namedframe}{Key generation}
+	The first step of RSA encryption is to generate a public-private keypair.
+	\begin{enumerate}[<+(1)->]
+		\item Alice starts by picking two random prime numbers, $p$ and $q$, that are similar in size. The bigger the better.
+		\item Alice then calculates:
+			\begin{enumerate}
+				\item $n = p \times q$
+				\item $\phi(n) = (p - 1) \times (q - 1)$
+			\end{enumerate}
+		\item Next, Alice chooses a random integer $e$ such that $0 < e < \phi(n)$ and $e$ has an inverse in $\bmod \phi(n)$ ($e$ and $\phi(n)$ are coprime).
+		\item For the final step, Alice computes $d$ to be the inverse of $e$. $e \times d \mod \phi(n) = 1 \such 0 < d < \phi(n)$
+	\end{enumerate}
+	\pause
+	Alice's public keypair is $(n, e)$.
+
+	Alice's private key is $d$.
+\end{namedframe}
+\begin{namedframe}{Encrypting}
+	Bob wants to send a message to Alice.
+	He has turned his message into a number $m$, such that $m < n$ (if $m \geq n$, then Bob will split the message up into multiple short messages).
+
+	If $m$ and $n$ are not coprime, then one could easily factorize $n$, thus breaking the encryption.
+	\sep
+	Bob then downloads Alice's public key from somewhere he trusts and calculates the \emph{ciphertext}, $c$:
+	\[c = m^e \bmod n\]
+	And he sends the encrypted message, $c$ to Alice.
+\end{namedframe}
+\begin{namedframe}{Decrypting}
+	To decrypt the message, Alice calculates calculates $r$, which is equal to $m$, Bob's message:
+	\[r = c^d \bmod n\]
+	\sep
+	How do we know that $r = m$?
+\end{namedframe}
+\begin{namedframe}{Euler's theorem}
+	\begin{theorem}[Euler's theorem]
+		When $a$ and $n$ are coprime positive integers:
+		\[a^{\phi(n)} \bmod n = 1\]
+	\end{theorem}
+\end{namedframe}
+\begin{namedframe}{Proof that $r = m$}
+	Remember that $\left(m^e\right)^d = m^{ed}$. So:
+	\[r = m^{ed} \bmod n\]
+	We know that $ed = 1 \bmod \phi(n)$ because we chose $e$ and $d$ to have that property.
+
+	This means that an integer, $q$, exists such that:
+	\[ed = q\phi(n) + 1\]
+\end{namedframe}
