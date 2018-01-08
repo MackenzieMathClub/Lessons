@@ -1,0 +1,95 @@
+\input{../WorksheetPreamble.tex}
+
+\usepackage{amsthm}
+
+\title{Cryptography}
+\author{Mackenzie Math Club}
+\date{January 8, 2018}
+
+\rfoot{\parbox[t]{0.35\textwidth}{\copyright{} Caroline Liu, Vincent Macri, and Samantha Unger, 2017}}
+
+\newcommand{\divides}{\operatorname{|}}
+
+\theoremstyle{definition}
+\newtheorem*{fermatLittle}{Fermat's Little Theorem}
+\newtheorem*{eulerFermat}{Euler-Fermat Generalization}
+\newtheorem*{uniqueFactorization}{Unique Factorization Theorem}
+
+\begin{document}
+	\section*{Modular Arithmetic}
+		\emph{Mod} is the remainder of two numbers.
+		\[a \bmod b = \text{the remainder of } a \div b\]
+		Mod can be easily computed with the following formula:
+		\[a \bmod b = a - b \floor*{\frac{a}{b}}\]
+		\subsection{Inverse modulo}
+			For modulus $n$, $b$ is the inverse of $a$ when:
+			\[a \times b \mod n = 1 \such 0 < a, b < n\]
+			The inverse of $a$ exists if and only if $a$ and $n$ are coprime. That is, $\gcd(a, n) = 1$.
+	\section*{Primes}
+		\begin{fermatLittle}
+			Let $p$ be a prime number, and $a$ an integer that does not divide $p$.
+
+			Then:
+			\[a^{p-1} \bmod p = 1\]
+		\end{fermatLittle}
+		\begin{eulerFermat}
+			Fermat's Little Theorem can be generalized as:
+			\[a^{\phi(n)} \bmod n = 1\]
+			Where $\phi(n)$ is Euler's totient function, which gives us the number of integers less than or equal to $n$ that are coprime to $n$.
+		\end{eulerFermat}
+		\textbf{Problem 1}: Try and prove the Euler-Fermat generalization using Fermat's Little Theorem:
+		\solutionspace{1in}
+	\section*{Factoring}
+		If $b$ divides $a$ with no remainder, we will write:
+		\[b \divides a\]
+		Read as ``$b$ divides $a$''
+		\begin{uniqueFactorization}
+			Every positive integer has a unique representation as a product of prime numbers.
+
+			That is, for all numbers $n \in \mathbb{Z}^+$:
+			
+			\[n = p_1^{a_1} \times p_2^{a_2} \times \dots \times p_k^{a_k}\]
+
+			Where $p_i$ is prime, and $a_i$ is a positive integer.
+		\end{uniqueFactorization}
+		\subsection*{Greatest common divisor}
+			\[x = \gcd(a, b) \such a, b \in \mathbb{Z}\]
+			Where $x$ is the largest number such that:
+			\[x \divides a \wedge x \divides b\]
+			Two numbers are coprime (only share $1$ as a factor) when their $\gcd$ is $1$.
+		\subsection*{Euclidean algorithm}
+			To find $\gcd(a, b)$, do the following:
+			\begin{enumerate}
+				\item Let $r_0 = a$, $r_1 = b$, and $i = 1$.
+				\item If $r_i = 0$ then $\gcd(a, b) = r_i$.
+				\item Write $r_{i-1} = q_ir_i + r_{i+1}$ and increment $i$ by $1$.
+				
+				      Here, $r_{i+1} = r_i \bmod r_{i-1}$.
+				\item Go back to step 2.
+			\end{enumerate}
+			The extended form of the algorithm lets us find two integers, $x$ and $y$, such that:
+			\[\gcd(a,b) = ax + by\]
+			We can use this to find the inverse of modular multiplication.
+	\section*{RSA}
+		\subsection*{Key generation}
+			The first step of RSA encryption is to generate a public-private keypair.
+			\begin{enumerate}
+				\item Start by picking two random prime numbers, $p$ and $q$, that are similar in size. The bigger the better.
+				\item Calculate:
+					\begin{enumerate}
+						\item $n = p \times q$
+						\item $\phi(n) = (p - 1) \times (q - 1)$
+					\end{enumerate}
+				\item Next, choose a random integer $e$ such that $0 < e < \phi(n)$ and $e$ has an inverse in $\bmod \phi(n)$ ($e$ and $\phi(n)$ are coprime).
+				\item For the final step, compute $d$ to be the inverse of $e$. $e \times d \mod \phi(n) = 1 \such 0 < d < \phi(n)$
+			\end{enumerate}
+			Your public keypair is $(n, e)$. Your private key is $d$.
+		\subsection*{Encrypting}
+			To encrypt a message $m$ such that $m < n$, calculate the \emph{ciphertext}, $c$, as so:
+			\[c = m^e \bmod n\]
+		\subsection*{Decrypting}
+			To decrypt $c$, apply the inverse of raising $m$ to the $e$: raise $m$ to the $d$.
+			\[m = r = c^d \bmod n\]
+	\section*{Last Problem}
+		Encrypt whatever you want using RSA.
+\end{document}

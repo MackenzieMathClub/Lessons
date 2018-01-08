@@ -2,13 +2,10 @@
 
 \usepackage{microtype}
 \usepackage{xparse}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{mathtools}
 \usepackage{siunitx}
 \usepackage{graphicx}
 
-\frenchspacing
+\input{../GenericPreamble}
 
 \logo{\includegraphics[width=0.07\textwidth]{../Logo}}
 
@@ -65,8 +62,3 @@
 
 % Text formatting
 \DeclareTextFontCommand{\emph}{\bfseries}
-
-% Macros for math
-\newcommand{\such}{\ |\ }
-\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
-\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
