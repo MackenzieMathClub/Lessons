@@ -60,8 +60,26 @@
 \begin{namedframe}{Proof that $r = m$}
 	Remember that $\left(m^e\right)^d = m^{ed}$. So:
 	\[r = m^{ed} \bmod n\]
+	\pause
 	We know that $ed = 1 \bmod \phi(n)$ because we chose $e$ and $d$ to have that property.
 
 	This means that an integer, $q$, exists such that:
 	\[ed = q\phi(n) + 1\]
+	\pause
+	So:
+	\begin{align*}
+		m^{ed} &= m^{q\phi(n) + 1} \mod n\\
+		       &= \left(m^{\phi(n)}\right)^q m \mod n\\
+		       &= 1^q m \mod n\\
+		       &= m \mod n
+	\end{align*}
+	\[\therefore r = m^{ed} = m\]
+\end{namedframe}
+\begin{namedframe}{Board example}
+	Let's do an example on the board with the following numbers:
+	\[p = 7\]
+	\[q = 11\]
+	\[n = 77\]
+	\[\phi(n) = (6)(10) = 60\]
+	\[e = 17\]
 \end{namedframe}
