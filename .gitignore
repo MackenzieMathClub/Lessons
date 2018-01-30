@@ -1,3 +1,7 @@
+## Directories I don't want in the git repo
+*_PRIVATE/
+
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
