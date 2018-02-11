@@ -52,13 +52,14 @@
 \newcommand{\bigframe}[1]{\begin{namedframe}{#1}\Huge\centering#1\end{namedframe}}
 
 % Spacing commands
-\newcommand{\sep}{\\\pause\vspace{1ex}}
-\newcommand{\varsep}[1]{\\\pause\vspace{#1}}
-\newcommand{\vsep}{\pause\vspace{1ex}}
-\newcommand{\varvsep}[1]{\pause\vspace{#1}}
+\newcommand{\sep}[1][1ex]{\\\pause\vspace{#1}}
+\newcommand{\vsep}[1][1ex]{\pause\vspace{#1}}
+\newcommand{\vertspace}[1][1ex]{\\\vspace{#1}}
 
-\newcommand{\vertspace}{\\\vspace{1ex}}
+% Do not use these, there are only for backwards compatibility with my old slides.
 \newcommand{\varvertspace}[1]{\\\vspace{#1}}
+\newcommand{\varsep}[1]{\\\pause\vspace{#1}}
+\newcommand{\varvsep}[1]{\pause\vspace{#1}}
 
 % Text formatting
 \DeclareTextFontCommand{\emph}{\bfseries}
