@@ -79,7 +79,7 @@
 		To find $\gcd(a, b)$, do the following:
 		\begin{enumerate}
 			\item Let $r_0 = a$, $r_1 = b$, and $i = 1$.
-			\item If $r_i = 0$ then $\gcd(a, b) = r_i$.
+			\item If $r_i = 0$ then $\gcd(a, b) = r_{i-1}$.
 			\item Write $r_{i-1} = q_ir_i + r_{i+1}$ and increment $i$ by $1$.
 			
 			      Here, $r_{i+1} = r_i \bmod r_{i-1}$.
