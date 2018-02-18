@@ -1,0 +1,16 @@
+% This file contains commands that should no longer be used.
+% They are only kept for compatibility with older slides.
+
+% Environments for math
+\newenvironment{compactmath}[1][\normalsize]%
+	{\begin{minipage}{\textwidth}\vspace{-0.5\baselineskip}#1\begin{equation*}}
+	{\end{equation*}\end{minipage}}
+
+\newenvironment{sizedmath}[1]%
+	{\begingroup#1\begin{equation*}}
+	{\end{equation*}\endgroup}
+
+% \sep, \vsep, and \vertspace not have optional arguments, rendering these obsolete.
+\newcommand{\varvertspace}[1]{\\\vspace{#1}}
+\newcommand{\varsep}[1]{\\\pause\vspace{#1}}
+\newcommand{\varvsep}[1]{\pause\vspace{#1}}

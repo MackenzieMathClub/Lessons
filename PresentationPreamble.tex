@@ -9,7 +9,7 @@
 
 \logo{\includegraphics[width=0.07\textwidth]{../Logo}}
 
-\sisetup{
+\sisetup{% Set the SI units to always use the math font.
 	detect-all,
 	math-rm=\mathrm,
 	math-sf=\mathrm,
@@ -29,14 +29,9 @@
 	\end{frame}
 }
 
-% Environments for math
-\newenvironment{compactmath}[1][\normalsize]%
-	{\begin{minipage}{\textwidth}\vspace{-0.5\baselineskip}#1\begin{equation*}}
-	{\end{equation*}\end{minipage}}
-
-\newenvironment{sizedmath}[1]%
-	{\begingroup#1\begin{equation*}}
-	{\end{equation*}\endgroup}
+% Load in environments that I used previously but were ugly hacks.
+% These should be avoided, and only are only kept for compatibility.
+\input{../DirtyHacks}
 
 % Environments for consistent frame use
 \newenvironment{namedframe}[1]%
@@ -55,11 +50,6 @@
 \newcommand{\sep}[1][1ex]{\\\pause\vspace{#1}}
 \newcommand{\vsep}[1][1ex]{\pause\vspace{#1}}
 \newcommand{\vertspace}[1][1ex]{\\\vspace{#1}}
-
-% Do not use these, there are only for backwards compatibility with my old slides.
-\newcommand{\varvertspace}[1]{\\\vspace{#1}}
-\newcommand{\varsep}[1]{\\\pause\vspace{#1}}
-\newcommand{\varvsep}[1]{\pause\vspace{#1}}
 
 % Text formatting
 \DeclareTextFontCommand{\emph}{\bfseries}
