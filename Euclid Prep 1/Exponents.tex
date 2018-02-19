@@ -1,4 +1,5 @@
-\section{Exponents review}
+\section{Exponents}
+\subsection{Review}
 \begin{namedframe}{Formulas}
 	When $a, b, x, y \in \real$ and $n \in \integer \such n \neq 0$:
 	\begin{columns}
@@ -21,7 +22,7 @@
 	\end{columns}
 	$0^0$ is not defined.
 \end{namedframe}
-\section{Exponents examples}
+\subsection{Exponent problems}
 \begin{namedframe}{Exponents problem 1}
 	\begin{exampleblock}{Problem}
 		If $m$ and $k$ are integers, find all solutions to the equation:
@@ -33,7 +34,28 @@
 	\begin{block}{Solution}
 		\vspace{-3ex}
 		\begin{align*}
-			9(1 + 7^2)k^2 &= 5^m(5^3 + 1)\\
+			\uncover<+->{9(1 + 7^2)7^k &= 5^m(5^3 + 1)\\}
+			\uncover<+->{(450)7^k &= 5^m(126)\\}
+			\uncover<+->{(2 \cdot 3^2 \cdot 5^2)7^k &= 5^m(2 \cdot 3^2 \cdot 7)\\}
+			\uncover<+->{5^2 \cdot 7^k &= 5^m \cdot 7}
+		\end{align*}
+		\uncover<+->{Since the integer factorization of numbers is always unique and both $m$ and $k$ are integers:}
+		\uncover<+->{$m = 2$ and $k = 1$.}
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Exponents problem 2}
+	\begin{exampleblock}{Problem}
+		The graph of $y = m^x$ passed through the points $(2,5)$ and $(5,n)$.
+		What is the value of $mn$?
+	\end{exampleblock}
+	\pause
+	\begin{block}{Solution}
+		We know that $m^2 = 5$ and $n = m^5$.
+		The solution is trivial from here:
+		\begin{align*}
+			\uncover<+->{m &= \pm\sqrt{5}\\}
+			\uncover<+->{n &= (\pm\sqrt{5})^5\\}
+			\uncover<+->{mn &= \uncover<+->{\left( \pm\sqrt{5} \right)^6} = \uncover<+->{\left( \sqrt{5} \right)^6} = \uncover<+->{\left( \sqrt{5} \cdot \sqrt{5} \right)^3} = \uncover<+->{5^3} = \uncover<+->{125}}
 		\end{align*}
 	\end{block}
 \end{namedframe}

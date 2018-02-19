@@ -1,0 +1,156 @@
+\section{Logarithms}
+\subsection{Review}
+\begin{namedframe}{Formulas}
+	When $a, x, y \in \real \such a, x, y \neq 0$:
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{align*}
+				\log_a(xy)                       &= log_a x + log_a y\\
+				\log_a\left( \frac{x}{y} \right) &= \log_a x - \log_a y\\
+				\log_a(x^y)                      &= y \log_a x\\
+				\log_a (a^x)                     &= a^{\log_a x} = x
+			\end{align*}
+		\end{column}
+		\begin{column}{0.5\textwidth}
+			\begin{align*}
+				\log_a 1                  &= 0\\
+				\log_a x                  &= \frac{1}{\log_x a}\\
+				\frac{\log_a x}{\log_a y} &= \log_y x
+			\end{align*}
+		\end{column}
+	\end{columns}
+	\pause
+	Also, $\log_b c$ has the restrictions:
+	\[b \in \real \such b > 0 \text{ and } b \neq 1\]
+	\[c \in \real \such c > 0\]
+	\pause
+	Finally, if $f(x) = a^x$ then $f^{-1} = \log_a(x)$.
+	That is, the exponential and logarithmic functions are each other's inverses.
+	More formally:
+	\[y = a^x \iff x = \log_a y\]
+\end{namedframe}
+\subsection{Logarithm problems}
+\begin{namedframe}{Logarithms problem 1}
+	\begin{exampleblock}{Problem}
+		Calculate the ratio $\frac{x}{y}$ if $2\log_5(x-3y) = \log_5(2x) + \log_5(2y)$.
+	\end{exampleblock}
+	\begin{block}{Solution}
+		First, we state our \emph{restrictions}: \pause $x > 0$, $y > 0$, and $x > 3y$.
+		\pause
+		\begin{align*}
+			2\log_5(x-3y)  &= \log_5(2x) + \log_5(2y)\\
+			\log_5(x-3y)^2 &= \log_5(4xy)
+		\end{align*}
+		\pause
+		We know that the logarithmic function is an \emph{injective function}.
+		\sep
+		An \emph{injective function} is one where $f(a) = b$ is only true for one value of $a$.
+		More formally:
+		\vspace{-2ex}
+		\[f \colon A \to B \text{ is injective if } \forall a, b \in A, f(a) = f(b) \implies a = b\]
+		\vspace{-4ex}
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Logarithms problem 1 solution continued}
+	\begin{block}{Solution}
+		Since $\log_a x$ is injective: $\log_a b = \log_a c \iff b = c$.
+		\pause
+		\begin{columns}[t]
+			\begin{column}{0.5\textwidth}
+				\begin{align*}
+					\log_5(x-3y)^2    &= \log_5(4xy)\\
+					(x - 3y)^2        &= 4xy\\
+					x^2 - 6xy + 9y^2  &= 4xy\\
+				\end{align*}
+			\end{column}
+			\pause
+			\begin{column}{0.5\textwidth}
+				\begin{align*}
+					x^2 - 10xy + 9y^2 &= 0\\
+					x^2 - xy - 9xy + 9y^2 &= 0\\
+					(x - y)(x - 9y)   &= 0
+				\end{align*}
+			\end{column}
+		\end{columns}
+		\vspace{-2ex}
+		\pause
+		From here we have two cases:
+		\pause
+		\vspace{-3ex}
+		\begin{columns}[onlytextwidth,t]
+			\begin{column}{0.7\textwidth}
+				\begin{align*}
+					x - y &= 0\\
+					x     &= y
+				\end{align*}
+				But this violates our restriction $x > 3y$, so the answer must be found via the next case.
+			\end{column}
+			\pause
+			\begin{column}{0.3\textwidth}
+				\begin{align*}
+					x - 9y                 &= 0\\
+					x                      &= 9y\\
+					\therefore \frac{x}{y} &= 9
+				\end{align*}
+			\end{column}
+		\end{columns}
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Logarithms problem 2}
+	\begin{exampleblock}{Problem}
+		Determine the points of intersection of the curves $y = \log_{10}(x-2)$ and $y = 1 - \log_{10}(x + 1)$.
+	\end{exampleblock}
+	\begin{block}{Solution}
+		First, we state our \emph{restrictions}: \pause $x > 2$.
+		\sep
+		Next, we simply equate the two curves:
+		\begin{align*}
+			\uncover<+->{\log_{10}(x-2)                     &= 1 - \log_{10}(x+1)\\}
+			\uncover<+->{\log_{10}(x-2) + \log_{10}(x+1)    &= 1\\}
+			\uncover<+->{\log_{10}\left( (x-2)(x+1) \right) &= 1}
+		\end{align*}
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Logarithms problem 2 solution continued}
+	\begin{block}{Solution}
+		\begin{align*}
+			\uncover<+->{\log_{10}\left( (x-2)(x+1) \right) &= 1\\}
+			\uncover<+->{(x-2)(x+1)                         &= 10\\}
+			\uncover<+->{x^2 - x - 2                        &= 10\\}
+			\uncover<+->{x^2 - x - 12                       &= 0\\}
+			\uncover<+->{(x-4)(x+3)                         &= 0}
+		\end{align*}
+		\uncover<+->{So we get $x = 4, -3$.}
+		\uncover<+->{We have the restriction $x > 2$, so we are left with $x = 4$.}
+		\uncover<+->{This leaves us with the point of intersection $(4, \log_{10}2)$.}
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Logarithms problem 3}
+	\begin{exampleblock}{Problem}
+		Solve for $x$ if $\log_2(9 - 2^x) = 3 - x$.
+	\end{exampleblock}
+	\begin{block}{Solution}
+		First, we state our \emph{restrictions}: \pause $9 > 2^x$.
+		\sep
+		Next, we do some algebra:
+		\begin{align*}
+			\uncover<+->{\log_2(9 - 2^x) &= 3 - x\\}
+			\uncover<+->{9 - 2^x         &= 2^{3 - x}\\}
+			\uncover<+->{9 - 2^x         &= \frac{2^3}{2^x}\\}
+			\uncover<+->{9 - 2^x         &= \frac{8}{2^x}}
+		\end{align*}
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Logarithms problem 2 solution continued}
+	\begin{block}{Solution}
+		\[9 - 2^x = \frac{8}{2^x}\]
+		Let $y = 2^x$.
+		\pause
+		\begin{align*}
+			\uncover<+->{9 - y         &= \frac{8}{y}\\}
+			\uncover<+->{-y^2 + 9y - 8 &= 0\\}
+			\uncover<+->{y             &= 1, 8}
+		\end{align*}
+		\uncover<+->{We substitute these solutions back into $y = 2^x$ to find that $x = 0$ or $x = 3$, both of which satisfy our restrictions.}
+	\end{block}
+\end{namedframe}
