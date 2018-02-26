@@ -1,0 +1,120 @@
+\section{Parabolas}
+\subsection{Overview}
+\begin{namedframe}{Quadratic formula}
+	For the quadratic function $f(x) = ax^2 + bx + c$ with $a, b, c \in \real \such a \neq 0$, there are two zeroes (roots) given by the quadratic formula:
+	\[r_1, r_2 = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+	Where the \emph{discriminant} ($\Delta$) is the value inside the square root:
+	\[\Delta = b^2 - 4ac\]
+	These roots are:
+	\begin{description}
+		\item[Real and distinct] if $\Delta > 0$
+		\item[Real and equal] if $\Delta = 0$
+		\item[Non-real and distinct] if $\Delta < 0$
+	\end{description}
+\end{namedframe}
+\begin{namedframe}{More stuff with parabola roots}
+	The sum of the roots of a parabola is $r_1 + r_2 = -\frac{b}{a}$.
+
+	The product of the roots of a parabola is $r_1r_2 = \frac{c}{a}$.
+
+	We can rearrange $y = ax^2 + bx + c$ as:
+	\[y = ax^2 + bx + c = a \left( x + \frac{b}{2a} \right)^2 + \frac{4ac - b^2}{4a}\]
+	Since the vertex is halfway between the roots, the vertex is at:
+	\[\left( -\frac{b}{2a}, \frac{4ac - b^2}{4a} \right)\]
+\end{namedframe}
+\subsection{Parabola problems}
+\begin{namedframe}{Parabola problem 1}
+	\begin{exampleblock}{Problem}
+		If $x^2 - x - 2 = 0$, determine all possible vales of $1 - \frac{1}{x} - \frac{6}{x^2}$.
+	\end{exampleblock}
+	\pause
+	\begin{block}{Solution}
+		We can apply the quadratic formula to find the values of $x$.
+		\sep
+		We use $a = 1$, $b = -1$, and $ c = -2$:
+		\pause
+		\begin{align*}
+			x_1, x_2 &= \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\\
+			x_1, x_2 &= \frac{1 \pm \sqrt{(-1)^2 - 4(1)(-2)}}{2(1)}\\
+			x_1, x_2 &= 2, -1
+		\end{align*}
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Parabola problem 1 solution continued}
+	\begin{block}{Solution}
+		We were asked to find the possible values of $1 - \frac{1}{x} - \frac{6}{x^2}$.
+
+		We simply plug in our two values of $x$.
+		\sep
+		$x = 2$:
+		\[1 - \frac{1}{2} - \frac{6}{2^2} = -1\]
+		\sep
+		$x = -1$:
+		\[1 - \frac{1}{-1} - \frac{6}{(-1)^2} = -4\]
+		\pause
+		Therefore the possible values are $-1$ and $-4$.
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Parabola problem 2}
+	\begin{exampleblock}{Problem}
+		If the graph of the parabola $y = x^2$ is translated to a position such that its $x$ intercepts are $-d$ and $e$ and its $y$ intercept is $-f$, (where $d, e, f > 0$), show that $de = f$.
+	\end{exampleblock}
+	\pause
+	\begin{block}{Solution}
+		We know the formula for a parabola given the roots: $y = a(x - r_1)(x - r_2)$.
+		\pause
+		We can plug in $r_1 = -d$ and $r_2 = e$:
+		\[y = a(x + d)(x - e)\]
+		\sep
+		Since we only performed a translation, and no stretch or compression, we know that $a = 1$.
+		\sep
+		So: $y = (x + d)(x - e)$.
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Parabola problem 2 solution continued}
+	\begin{block}{Solution}
+		\vspace{-3ex}
+		\[y = (x + d)(x - e)\]
+		\pause
+		And since the $y$-intercept occurs at $x = 0$, we plug in $x = 0$ and $y = -f$:
+		\begin{align*}
+			\uncover<+->{y  &= (x + d)(x - e)\\}
+			\uncover<+->{-f &= (0 + d)(0 - e)\\}
+			\uncover<+->{-f &= (d)(-e)\\}
+			\uncover<+->{-f &= -de\\}
+			\uncover<+->{f &= de}
+		\end{align*}
+		\uncover<.->{Q.E.D.}
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Parabola problem 3}
+	\begin{exampleblock}{Problem}
+		Find all values of $x$ such that $x + \frac{36}{x} \geq 13$.
+	\end{exampleblock}
+	\pause
+	\begin{block}{Solution}
+		First, we state our restriction: \pause $x \neq 0$.
+		\sep
+		We can also see that this inequality will certainly be false for any negative values of $x$.
+		This means that $x > 0$.
+		\sep
+		Since we know the sign of $x$, we can algebraically rearrange the inequality.
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Parabola problem 3 solution continued}
+	\begin{block}{Solution}
+		Next, we rearrange the inequality:
+		\begin{align*}
+			x + \frac{36}{x} &\geq 13\\
+			x^2 + 36 &\geq 13x\\
+			x^2 - 13x + 36 &\geq 0
+		\end{align*}
+		\pause
+		We can factor it as $(x - 4)(x - 9) \geq 0$.
+		\pause
+		After taking into account our restrictions, we arrive at:
+		\[0 < x \leq 4 \cup x \geq 9\]
+		\pause
+		More formally, we can state that: $x \in (0, 4] \cup [9, \infty)$.
+	\end{block}
+\end{namedframe}

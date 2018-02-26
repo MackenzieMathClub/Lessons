@@ -1,0 +1,72 @@
+\section{Polynomials}
+\subsection{Overview}
+\begin{namedframe}{Theorems}
+	\begin{theorem}[Remainder Theorem and Factor Theorem]
+		The remainder theorem states that when a polynomial $p(x) = a_0x^n + a_1x^{n-1} + \dots + a_n$, of degree $n$, is divided by $(x-k)$ the remainder is $p(k)$.
+
+		The factor theorem then follows: $p(k) = 0$ if and only if $(x - k)$ is a factor of $p(x)$.
+
+		A polynomial equation of degree $n$ has at most $n$ \emph{real} roots.
+		It will always have $n$ \emph{complex} roots.
+	\end{theorem}
+	\begin{theorem}[Rational Root Theorem]
+		The rational root theorem states that all rational roots $\frac{a}{b}$ have the property that $a$ and $b$ are factors of the last and first coefficient, $a_n$ and $a_0$ respectively.
+	\end{theorem}
+\end{namedframe}
+\subsection{Polynomial problems}
+\begin{namedframe}{Polynomial problem 1}
+	\begin{exampleblock}{Problem}
+		If a polynomial leaves a remainder of $5$ when divided by $x-3$ and a remainder of $-7$ when divided by $x + a$, what is the remainder when the polynomial is divided by $x^2 - 2x - 3$?
+	\end{exampleblock}
+	\pause
+	\begin{block}{Solution}
+		Let's examine how we we divide polynomials:
+		\[\frac{p(x)}{d(x)} = q(x) + \frac{r(x)}{d(x)}\]
+		Where $p(x)$ is the dividend, $d(x)$ is the divisor, $q(x)$ is the quotient, and $r(x)$ is the remainder.
+		\sep
+		This can be rearranged as: $p(x) = d(x)q(x) + r(x)$.
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Polynomial problem 1 solution continued}
+	\begin{block}{Solution}
+		We know that (generally) when dividing a polynomial by another polynomial of degree $n$, the remainder will have a degree of $n - 1$ (fun exercise: why did I say generally?).
+		\pause
+		So, dividing our polynomial by $x^2 -2x - 3$ should leave a linear remainder.
+		\sep
+		We will call the polynomial we are dividing by $p(x)$. Then:
+		\[p(x) = (x^2 - 2x - 3)q(x) + ax + b\]
+		where $q(x)$ is the quotient, and $ax + b$ is the remainder.
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Polynomial problem 1 solution continued}
+	\begin{block}{Solution}
+		\[p(x) = (x^2 - 2x - 3)q(x) + ax + b\]
+		We can factor $x^2 - 2x - 3$ as $(x - 3)(x + 1)$.
+		\[p(x) = (x - 3)(x + 1)q(x) + ax + b\]
+		\sep
+		The remainder for when we divide by these was given in the problem statement.
+		From the remainder theorem, we know that:
+		\[p(3)  = 5  = ax + b = 3a + b\]
+		\[p(-1) = -7 = ax + b = -a + b\]
+	\end{block}
+\end{namedframe}
+\begin{namedframe}{Polynomial problem 1 solution continued}
+	\begin{block}{Solution}
+		\begin{equation*}
+			\begin{array}{lrl}
+				  & 5  &= 3a + b\\
+				- & -7 &= -a + b\\\hline
+				  & 12 &= 4a\\
+				  & a  &= 3
+			\end{array}
+		\end{equation*}
+		\pause
+		\begin{align*}
+			-7 &= -a + b\\
+			-7 &= -3 + b\\
+			b  &=  -4
+		\end{align*}
+		\pause
+		Therefore, the remainder is $3x - 4$.
+	\end{block}
+\end{namedframe}

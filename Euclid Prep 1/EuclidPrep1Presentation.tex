@@ -12,10 +12,20 @@
 
 \begin{document}
 	\frame{\titlepage}
-	\begin{frame}
-		\Cref{part:logarithmsAndExponents}: \tableofcontents[part=1]
-		\Cref{part:functionsAndEquations}: \tableofcontents[part=2]
-	\end{frame}
+	\begin{namedframe}{Workshop Overview}
+		\begin{columns}[t]
+			\begin{column}{0.5\textwidth}
+				\Cref{part:logarithmsAndExponents}:
+				\newline
+				\tableofcontents[part=1]
+			\end{column}
+			\begin{column}{0.5\textwidth}
+				\Cref{part:functionsAndEquations}:
+				\newline
+				\tableofcontents[part=2]
+			\end{column}
+		\end{columns}
+	\end{namedframe}
 	\include{LogarithmsAndExponents}
 	\include{FunctionsAndEquations}
 \end{document}
