@@ -4,7 +4,10 @@
 \usepackage{wrapfig}
 \usepackage{textpos}
 \usepackage{tikz}
+\usepackage{tkz-euclide}
 \usetikzlibrary{angles,quotes}
+\usetkzobj{all}
+
 
 \title{Euclid Preparation 3}
 \subtitle{Circle Geometry}
@@ -12,19 +15,21 @@
 \institute{William Lyon Mackenzie C.I. Math Club}
 \date{\copyright{} Caroline Liu, Vincent Macri, and Samantha Unger, 2018}
 
-\includeonly{CrossedChordTheorem}
-
 \begin{document}
 	\frame{\titlepage}
 	\section{Star Trek Theorem}
-		\include{StarTrekTheorem}
+		\input{StarTrekTheorem}
 		\subsection{Extensions}
 			\bigframe{Extending}
-			\include{StarTrekExtension1}
-			\include{StarTrekExtension2}
-			\include{StarTrekExtension3}
-			\include{StarTrekExtension4}
-			\include{StarTrekExtension5}
+			\input{StarTrekExtension1}
+			\input{StarTrekExtension2}
+			\input{StarTrekExtension3}
+			\input{StarTrekExtension4}
+			\input{StarTrekExtension5}
 	\section{Crossed Chord Theorem}
-		\include{CrossedChordTheorem}
+		\input{CrossedChordTheorem}
+		\input{CrossedChordExtension}
+	\section{Important Tangent Properties}
+		\input{TwoTangents}
+		\input{TangentChordTheorem}
 \end{document}
