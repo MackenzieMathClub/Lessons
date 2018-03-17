@@ -2,6 +2,7 @@
 
 \usepackage{adjustbox}
 \usepackage{wrapfig}
+\usepackage{textpos}
 \usepackage{tikz}
 \usetikzlibrary{angles,quotes}
 
@@ -11,7 +12,19 @@
 \institute{William Lyon Mackenzie C.I. Math Club}
 \date{\copyright{} Caroline Liu, Vincent Macri, and Samantha Unger, 2018}
 
+\includeonly{CrossedChordTheorem}
+
 \begin{document}
 	\frame{\titlepage}
-	\include{StarTrek}
+	\section{Star Trek Theorem}
+		\include{StarTrekTheorem}
+		\subsection{Extensions}
+			\bigframe{Extending}
+			\include{StarTrekExtension1}
+			\include{StarTrekExtension2}
+			\include{StarTrekExtension3}
+			\include{StarTrekExtension4}
+			\include{StarTrekExtension5}
+	\section{Crossed Chord Theorem}
+		\include{CrossedChordTheorem}
 \end{document}

@@ -1,0 +1,62 @@
+\subsubsection{Extension 2}
+\begin{namedframe}{On the major arc}
+	\begin{example}
+		Show that the Star Trek theorem is still true if $\angle AOB > \SI{180}{\degree}$.
+		\vertspace
+		That is, show that $\angle AOB = 2\angle ACB$ is true in this diagram.
+	\end{example}
+	\centering
+	\begin{tikzpicture}[scale=0.4]
+		\coordinate [label=below:$O$](O) at (0,0);
+		\coordinate [label=below left:$A$](A) at (-5,0);
+		\coordinate [label=below right:$B$](B) at (4.75,1.5612494996);
+		\coordinate [label=above left:$C$](C) at (-1,4.89897948557);
+
+		\draw (O) circle (5);
+		\draw (A) -- (O) -- (B) -- (C) -- cycle;
+		\draw [dashed] (O) -- (C);
+
+		\pic [draw, "$\angle BOA$", angle eccentricity=1.5] {angle = B--O--A};
+		\pic [draw, "$\angle AOB$", angle eccentricity=1.5, angle radius=6mm] {angle = A--O--B};
+	\end{tikzpicture}
+\end{namedframe}
+\begin{namedframe}{Extension 2 proof}
+	\footnotesize
+	\begin{proof}[Proof that $\angle AOB = 2\angle ACB $.]
+		\vspace{-2ex}
+		\begin{wrapfigure}[0]{r}{0pt}
+			\scriptsize
+			\begin{tikzpicture}[scale=0.2]
+				\coordinate [label=below:$O$](O) at (0,0);
+				\coordinate [label=below left:$A$](A) at (-5,0);
+				\coordinate [label=below right:$B$](B) at (4.75,1.5612494996);
+				\coordinate [label=above left:$C$](C) at (-1,4.89897948557);
+
+				\draw (O) circle (5);
+				\draw (A) -- (O) -- (B) -- (C) -- cycle;
+				\draw [dashed] (O) -- (C);
+
+				\pic [draw, "$\angle BOA$", angle eccentricity=1.5, angle radius=3mm] {angle = B--O--A};
+				\pic [draw, "$\angle AOB$", angle eccentricity=1.5, angle radius=4mm] {angle = A--O--B};
+			\end{tikzpicture}
+		\end{wrapfigure}
+		\[2\angle ACO + \angle AOC = \SI{180}{\degree}\]
+		\[2\angle BCO + \angle BOC = \SI{180}{\degree}\]
+		\sep
+		We add these two equations to get:
+		\sep[0pt]
+		\begin{align*}
+			2(\angle ACO + \angle BCO) + \angle AOC + \angle BOC &= \SI{360}{\degree}\\
+			2(\angle ACO + \angle BCO) &= \SI{360}{\degree} - (\angle AOC + \angle BOC)
+		\end{align*}
+		\pause
+		We know that $\angle AOC + \angle BOC = \angle BOA$, so:
+		\[2(\angle ACO + \angle BCO) = \SI{360}{\degree} - \angle BOA\]
+		\pause
+		We also know that $\angle AOB = \SI{360}{\degree} - \angle BOA$.
+		\sep[0pt]
+		And $\angle ACB = \angle ACO + \angle BOC$.
+		\pause
+		\[\therefore 2\angle ACB = \angle AOB \qedhere\]
+	\end{proof}
+\end{namedframe}
