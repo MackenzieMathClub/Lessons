@@ -2,10 +2,12 @@
 \usepackage{lmodern}
 \usepackage{microtype}
 
+% Math packages.
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{commath}
+\usepackage{siunitx}
 
 \frenchspacing
 
@@ -15,3 +17,6 @@
 \newcommand{\integer}{\mathbb{R}}
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 \DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+% Unit setup
+\NewDocumentCommand{\varSI}{}{\SI[number-math-rm=\mathnormal,parse-numbers=false]} % Use variables as the value of units.
