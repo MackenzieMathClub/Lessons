@@ -1,11 +1,77 @@
 \input{../PresentationPreamble}
 
+\usepackage{adjustbox}
+\usepackage{wrapfig}
+\usepackage{textpos}
+\usepackage{tikz}
+\usepackage{tkz-euclide}
+\usetikzlibrary{angles,quotes}
+\usetkzobj{all}
+
 \title{Euclid Preparation 4}
 \subtitle{Proofs}
 \author{Lev Raizman}
 \institute{William Lyon Mackenzie C.I. Math Club}
-\date{\copyright{} Caroline Liu, Vincent Macri, and Samantha Unger, 2018}
+\date{\copyright{} Lev Raizman, 2018}
 
 \begin{document}
 	\frame{\titlepage}
+	\section{Direct Proof}
+	%\if{false}
+	\begin{namedframe}{What is it?}
+		A direct proof it the most basic type of proof.
+		\sep
+		It follows a set of logically true statements, which allow one to arrive from statement A to statement B.
+		\sep
+		They can rely on axioms, definitions, and earlier proved COMMON KNOWLEDGE theorems.
+		\sep
+		Proof by example is a sub-category of direct proofs, and is not covered in this lesson. It consists of finding a single case to a supposition in the form of ``There exists $N$ such that ...''.
+	\end{namedframe}
+	\input{./Definitions}
+	\input{./ExamplesDirectProof}
+	%\fi
+	\section{Proof by Contradiction}
+	%\if{false}
+	\begin{namedframe}{What is it?}
+		A proof by contradiction is another common method of proving a statement.
+		\sep
+		It makes an assumption, and then follows through a set of logical steps that show that if the assumption is true, the assumption must be false. This results in a contradiction, meaning the assumption is false.
+		\sep
+		A similar style of proof is called ``Proof by Contraposition'', which proves a statement ``If $A$ then $B$'' by proving that ``If not $A$, then not $B$''.
+	\end{namedframe}
+	\input{./ExamplesContradictProof}
+	%\fi
+	\section{Proof by Exhaustion}
+	%\if{false}
+	\begin{namedframe}{What is it?}
+		This proof is a case by case proof, but must be used with caution.
+		\sep
+		It splits the question into all the possible cases, and then proves that the statement is true for all possible cases.
+		\sep
+		It can look very disorganized, especially if the cases are singular numbers instead of sets, but it is still a proof.
+	\end{namedframe}
+	\input{./ExamplesExhaustProof}
+	%\fi
+	\section{Nonconstructive Proof}
+	%\if{false}
+	\begin{namedframe}{What is it?}
+		This proof is quite rare, and is somewhat similar to an exhaustive proof
+		\sep
+		It relies on showing that within a given set of parameters something must be possible, without pinpointing exactly what it is. This is why it is called nonconstructive.It also often relies on exhaustive properties of these parameters.
+		\sep
+		It is also sometimes called ``Proof by Ternary Exclusion'', when there are two cases, and no third one is possible.
+	\end{namedframe}
+	\input{./ExamplesNonConProof}
+	%\fi
+	\section{Proof by Induction}
+	%\if{false}
+	\begin{namedframe}{What is it?}
+		This proof is extremely versatile, and should be applied if possible.
+		\sep
+		It relies on proving a case, then assuming that the statement is true, and proving that the statement is always true for an input one greater or one less. This results in a recursive proof of all other values.
+		\sep
+		Despite its name, the proof is still deductive, not inductive.
+	\end{namedframe}
+	\input{./ExamplesInductiveProof}
+	%\fi
 \end{document}

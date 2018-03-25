@@ -1,0 +1,67 @@
+\subsection{Examples}
+\begin{namedframe}{Odd Number Squared}
+	\begin{example}
+		Given an odd integer $N$, prove that $N^2$ is also an odd integer.	
+	\end{example}
+	\pause
+	First, check that it is true for $N=1$.
+	\pause
+	\begin{align*}
+		N^2 &= 1^2\\
+			&= 1
+	\end{align*}
+\end{namedframe}
+\begin{namedframe}{Odd Number Squared}
+	Next, assume that it is true for all $N$. Now prove that it is true for any $N+2$. It cannot be for $N+1$, because an odd number plus 1 is even, while the proof asks for odd. Recall that if $N$ is odd, it can be expressed as $2M+1$.
+	\begin{align*}
+		(N+2)^2 &= (2M+3)^2\\
+			&= 2M^2+12M+9\\
+			&= 2(M^2+6M+4)+1\\
+	\end{align*}
+	\pause
+	Therefore, any $N+2$ is also odd.\pause This works because we showed that the statement is true for $N=1$. From the above, we know that it is also true for $N+2$, in this case 3. However, this implies that it is also true for 5, which in turn implies that it is true for 7, and so on until all odd integers are covered.
+\end{namedframe}
+\begin{namedframe}{Arithmetic Sequence}
+	\begin{example}
+		Prove that $p(N)=0+1+2+3+...+N-1+N=\frac{N(N+1)}{2}$.
+	\end{example}
+	First, check that it is true for $N=0$.
+	\pause
+	\begin{align*}
+		0 &= \frac{0(0+1)}{2}\\
+		&= 0
+	\end{align*}
+	\pause
+	Assume it is true from p(N). Now prove that it is true for p(N+1).
+\end{namedframe}
+\begin{namedframe}{Inductive Portion}
+	\begin{block}{What is being proven!}
+		\centering$0+1+2+..+N+(N+1) = \frac{(N+1)((N+1)+1)}{2}$
+	\end{block}
+	\begin{align*}
+		\uncover<+->{0+1+2+..+N+(N+1) &= \frac{N(N+1)}{2} + (N+1)\\}
+		\uncover<+->{&= \frac{N(N+1)+2(N+1)}{2}\\}
+		\uncover<+->{&= \frac{(N+2)(N+1)}{2}\\}
+		\uncover<+->{&= \frac{(N+1)((N+1)+1)}{2}\\}
+	\end{align*}
+	\uncover<+->{Which is what needed to be proven. $Q.E.D.$}
+\end{namedframe}
+\begin{namedframe}{Addition and Subtraction when Inducing}
+	\begin{example}
+		Prove that $4^N-1$ is always divisible by 3 if $N$ is a positive integer.
+	\end{example}
+	First, check that the statement is true for $N=1$.
+	\begin{align*}
+		4^N-1 &= 4^1-1\\
+		&= 3\\
+	\end{align*}
+	Assume it is true for $N$, now prove for $N+1$.\pause This time, we will take the difference between the statement for $N$ and $N+1$. Because the statement is assumed to be true for $N$, if their difference is divisible by 3, then it must also be divisible by 3 for $N+1$.
+\end{namedframe}
+\begin{namedframe}{Addition and Subtraction when Inducing}
+	\begin{align*}
+	\uncover<+->{4^{N+1}-1 - (4^N-1)&= 4^{N+1}-4^N\\}
+	\uncover<+->{&= 4^N(4^1-1)\\}
+	\uncover<+->{&= 4^N(3)\\}
+	\end{align*}
+	\uncover<+->{Thus, the statement is true.}
+\end{namedframe}
