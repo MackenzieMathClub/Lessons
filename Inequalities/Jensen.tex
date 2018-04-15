@@ -1,12 +1,12 @@
 \section{Jensen's Inequality}
-\begin{namedframe}{Convexity and Convavity}
+\begin{namedframe}{Convexity and Concavity}
 	An interval of a function is \textbf{convex} if the line segment connecting any 2 points in the interval lies above or on the function.
 	\begin{center}\begin{tikzpicture}
 		\draw[scale=0.5,domain=-5:5,smooth,variable=\x,black] plot ({\x}, {0.2*\x*\x});
 	\end{tikzpicture}\end{center}
 \end{namedframe}
 
-\begin{namedframe}{Convexity and Convavity}
+\begin{namedframe}{Convexity and Concavity}
 	An interval of a function is \textbf{concave} if the line segment connecting any 2 points in the interval lies below or on the function.
 	\begin{center}\begin{tikzpicture}
 		\draw[scale=0.5,domain=-5:5,smooth,variable=\x,black] plot ({\x}, {-0.2*\x*\x});
@@ -19,7 +19,7 @@
 	\end{block}
 
 	Less formally, choosing some points on a convex curve, the average of the y-coordinates is greater than or equal to the
-	y-coordinate of average of x-coordiantes.
+	y-coordinate of average of x-coordinates.
 \end{namedframe}
 
 \begin{namedframe}{Statement of the Inequality}
@@ -27,8 +27,8 @@
 		\[\frac{f(x_1) + f(x_2) + ... + f(x_n)}{n} \leq f \left( \frac{x_1 + x_2 + ... + x_n}{n} \right ) \]
 	\end{block}
 
-	Less formally, choosing some points on a convex curve, the average of the y-coordinates is less than or equal to the
-	y-coordinate of average of x-coordiantes.
+	Less formally, choosing some points on a concave curve, the average of the y-coordinates is less than or equal to the
+	y-coordinate of average of x-coordinates.
 \end{namedframe}
 
 \begin{namedframe}{Example}
