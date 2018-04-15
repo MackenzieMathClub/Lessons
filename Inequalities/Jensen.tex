@@ -1,0 +1,67 @@
+\section{Jensen's Inequality}
+\begin{namedframe}{Convexity and Convavity}
+	An interval of a function is \textbf{convex} if the line segment connecting any 2 points in the interval lies above or on the function.
+	\begin{center}\begin{tikzpicture}
+		\draw[scale=0.5,domain=-5:5,smooth,variable=\x,black] plot ({\x}, {0.2*\x*\x});
+	\end{tikzpicture}\end{center}
+\end{namedframe}
+
+\begin{namedframe}{Convexity and Convavity}
+	An interval of a function is \textbf{concave} if the line segment connecting any 2 points in the interval lies below or on the function.
+	\begin{center}\begin{tikzpicture}
+		\draw[scale=0.5,domain=-5:5,smooth,variable=\x,black] plot ({\x}, {-0.2*\x*\x});
+	\end{tikzpicture}\end{center}
+\end{namedframe}
+
+\begin{namedframe}{Statement of the Inequality}
+	\begin{block}{Convex Case}
+		\[\frac{f(x_1) + f(x_2) + ... + f(x_n)}{n} \geq f \left( \frac{x_1 + x_2 + ... + x_n}{n} \right ) \]
+	\end{block}
+
+	Less formally, choosing some points on a convex curve, the average of the y-coordinates is greater than or equal to the
+	y-coordinate of average of x-coordiantes.
+\end{namedframe}
+
+\begin{namedframe}{Statement of the Inequality}
+	\begin{block}{Concave Case}
+		\[\frac{f(x_1) + f(x_2) + ... + f(x_n)}{n} \leq f \left( \frac{x_1 + x_2 + ... + x_n}{n} \right ) \]
+	\end{block}
+
+	Less formally, choosing some points on a convex curve, the average of the y-coordinates is less than or equal to the
+	y-coordinate of average of x-coordiantes.
+\end{namedframe}
+
+\begin{namedframe}{Example}
+	\begin{exampleblock}{Problem}
+		Prove that for all $n \in \mathbb{N}$,
+		\[\sqrt{1^2 + 1} + \sqrt{2^2 + 1} + ... + \sqrt{n^2 + 1} \geq \frac{n}{2}\sqrt{n^2 + 2n + 5}\]
+	\end{exampleblock}
+\end{namedframe}
+
+\begin{namedframe}{Example}
+	\begin{block}{Solution}
+		Let $f(x) = \sqrt{x^2 + 1}$.
+		
+		This also equals $\abs{x}\cdot\sqrt{1 + \frac{1}{x^2}}$, which behaves like $\abs{x}$ but has a minimum value of $1$ instead of $0$.
+	\end{block}
+\end{namedframe}
+
+\begin{namedframe}{Example}
+	\begin{block}{Solution}
+		Using Jensen's Inequality, we get
+
+		\[\frac{f(x_1) + f(x_2) + ... + f(x_n)}{n} \leq f \left( \frac{x_1 + x_2 + ... + x_n}{n} \right ) \]
+		\[\frac{f(1) + f(2) + ... + f(n)}{n} \leq f \left( \frac{1 + 2 + ... + n}{n} \right ) \]
+		\[f(1) + f(2) + ... + f(n) \leq f \left( \frac{1 + 2 + ... + n}{n} \right ) \cdot n\]
+	\end{block}
+\end{namedframe}
+
+\begin{namedframe}{Example}
+	\begin{block}{Solution (continued)}
+		\[f(1) + f(2) + ... + f(n) \leq f \left( \frac{1 + 2 + ... + n}{n} \right ) \cdot n\]
+		\[f(1) + f(2) + ... + f(n) \leq f \left( \frac{ \frac{n\cdot(n+1)}{2} }{n} \right ) \cdot n\]
+		\[f(1) + f(2) + ... + f(n) \leq f \left( \frac{n + 1}{2} \right ) \cdot n\]
+		\[f(1) + f(2) + ... + f(n) \leq \left( \sqrt{\frac{n + 1}{2}} + 1 \right) \cdot n\]
+		\[\sqrt{1^2 + 1} + \sqrt{2^2 + 1} + ... + \sqrt{n^2 + 1} \leq \frac{1}{2} \sqrt{n^2 + 2n + 5}\]
+	\end{block}
+\end{namedframe}

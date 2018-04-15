@@ -1,0 +1,35 @@
+\section{Cauchy-Bunyakovsky-Schwarz Inequality}
+\begin{namedframe}{Statement of the Inequality}
+	\begin{block}{Statement}
+	For some 2 sequences of real numbers $a_n$ and $b_n$,
+		\[(a_1^2 + a_2^2 + ... + a_n^2) \cdot (b_1^2 + b_2^2 + ... + b_n^2) \geq (a_1 \cdot b_1 + a_2 \cdot b_2 + ... + a_n \cdot b_n)^2 \]
+	\end{block}
+
+	Less formally, the sum of squares in $a_n$ multiplied by the sum of squares in $b_n$ is greater or equal to the square of the sum of the
+	one-to-one products of $a_n$ and $b_n$.
+	\pause
+
+	\begin{block}{Simple Case}
+		\[(a^2 + b^2)\cdot(c^2 + d^2) \geq (ac + bd)^2\]
+	\end{block}
+\end{namedframe}
+
+\begin{namedframe}{Example}
+	\begin{exampleblock}{Problem}
+		Suppose $a, b$ are positive real numbers such that
+		
+		$a + b$ = 1. Find the minimum value of
+		$\frac{1}{a} + \frac{1}{b}$.
+	\end{exampleblock}
+\end{namedframe}
+
+\begin{namedframe}{Example}
+	\begin{block}{Solution}
+		We cleverly use the Cauchy-Bunyakovsky-Schwarz Inequality:
+		\footnotesize
+		\[ \left( (\sqrt{a})^2 + (\sqrt{b})^2 \right) \cdot \left( \frac{1}{(\sqrt{a})^2} + \frac{1}{(\sqrt{b})^2} \right) \geq \left ( \left((\sqrt{a}) \cdot \frac{1}{\sqrt{a}} \right) + \left((\sqrt{b}) \cdot \frac{1}{\sqrt{b}} \right) \right)^2 \]
+		\[ (a + b) \cdot \left( \frac{1}{a} + \frac{1}{b} \right) \geq (1 + 1)^2 \]
+		\[ 1 \cdot \left( \frac{1}{a} + \frac{1}{b} \right) \geq 4\]
+		\[\frac{1}{a} + \frac{1}{b} \geq 4\]
+	\end{block}
+\end{namedframe}
