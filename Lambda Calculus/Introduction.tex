@@ -1,0 +1,24 @@
+\section{Introduction}
+\begin{namedframe}{What is lambda calculus?}
+	\begin{itemize}[<+->]
+		\item Created by Alonzo Church
+		\item A way of representing \alert{pure} mathematical functions
+		\item Can represent any computer program
+		\item Equivalent to Turing machines
+	\end{itemize}
+\end{namedframe}
+\begin{namedframe}{$x+1$}
+	In math class, we would define a function that accepts an argument $x$ and outputs $x+1$ as so:
+	\[f(x) \pause = x + 1\]
+	\pause
+	In lambda calculus, we do it like this:
+	\[\lambda \pause x \pause . \pause x + 1\]
+	\pause
+	If we wanted to find $4 + 1$, we could do this:
+	\[f(4) = 4 + 1 = 5\]
+	\pause
+	In lambda calculus, we do this:
+	\[(\lambda x . x+1) 4 = 4 + 1 = 5\]
+	\pause
+	You can think of $\lambda$ as $f$, and $.$ as $=$.
+\end{namedframe}
