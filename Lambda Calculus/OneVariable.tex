@@ -1,0 +1,36 @@
+\section{One Parameter}
+\begin{namedframe}{Currying}
+	How would we define a function that outputs $x + y$ in math class?
+	\pause
+	\[f(x, y) = x + y\]
+	\pause
+	In lambda calculus, functions are only allowed to have \alert{one} parameter.
+	\sep
+	So, to add two numbers, we have a function output another function, like this:
+	\[\lambda x . \lambda y . x + y\]
+	And we use it like this:
+	\[(\lambda x . \lambda y . x + y) (2, 3) \pause = (\lambda y . 2 + y) 3 \pause = 2 + 3 = 5\]
+\end{namedframe}
+\begin{namedframe}{Why one argument?}
+	\begin{itemize}[<+->]
+		\item Very simple
+		\item Very powerful
+		\item Functions can only have one variable
+	\end{itemize}
+\end{namedframe}
+\begin{namedframe}{But I'm lazy}
+	Me too!
+	\sep
+	We have some shortcuts to help us write down lambda calculus expressions, but it's important to remember what they represent, without the shortcuts.
+	\pause
+	\[\lambda x . \lambda y . \lambda z . A\]
+	Can be abbreviated as:
+	\[\lambda xyz . A\]
+	\pause
+	Also, we assume that we evaluate a function with ``multiple'' arguments starting with the leftmost parameter.
+\end{namedframe}
+\begin{namedframe}{This is stupid. It just makes everything harder.}
+	\uncover<2->{For those examples, }you're right!
+
+	\uncover<3->{Let's get to the fun stuff now!}
+\end{namedframe}
