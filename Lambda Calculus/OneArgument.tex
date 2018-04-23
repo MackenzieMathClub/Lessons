@@ -1,4 +1,4 @@
-\section{One Parameter}
+\section{One Argument}
 \begin{namedframe}{Currying}
 	How would we define a function that outputs $x + y$ in math class?
 	\pause
@@ -9,7 +9,7 @@
 	So, to add two numbers, we have a function output another function, like this:
 	\[\lambda x . \lambda y . x + y\]
 	And we use it like this:
-	\[(\lambda x . \lambda y . x + y) (2, 3) \pause = (\lambda y . 2 + y) 3 \pause = 2 + 3 = 5\]
+	\[(\lambda x . \lambda y . x + y) (2 \quad 3) \pause = (\lambda y . 2 + y) 3 \pause = 2 + 3 = 5\]
 \end{namedframe}
 \begin{namedframe}{Why one argument?}
 	\begin{itemize}[<+->]

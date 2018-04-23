@@ -1,0 +1,33 @@
+\section{Booleans}
+\begin{namedframe}{Boolean logic}
+	\begin{block}{Quote}
+		``Any program can be written in lambda calculus.''
+		\sep
+		\hspace{18em} --- Me, 5 minutes ago
+	\end{block}
+	\pause
+	So, let's bring on the Booleans!
+\end{namedframe}
+\begin{namedframe}{True and false}
+	We define $\true$ as:
+	\[\true = \lambda x.\lambda y.x = \lambda xy.x\]
+	\pause
+	And $\false$ as:
+	\[\false = \lambda x.\lambda y.y = \lambda xy.y\]
+	\pause
+	So $\true$ returns the first value, and $\false$ returns the second.
+	\sep
+	We will use $\true$ and $\false$ and shorthand for their respective definitions shown here.
+\end{namedframe}
+\begin{namedframe}{$\not$}
+	$\not$ can be written in lambda calculus as:
+	\[\not = \lambda b . b (\false\ \true)\]
+	\pause
+	\begin{exampleblock}{$\not\ \true$}
+		\begin{align*}
+			\uncover<+->{\left( \lambda b . b (\false\ \true) \right) \true &= \uncover<+->{\true (\false\ \true)}}\\
+			\uncover<+->{                                      &= \lambda xy.x (\false\ \true)}\\
+			\uncover<+->{                                      &= \false}
+		\end{align*}
+	\end{exampleblock}
+\end{namedframe}
