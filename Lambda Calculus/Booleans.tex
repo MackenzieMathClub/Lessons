@@ -8,26 +8,42 @@
 	\pause
 	So, let's bring on the Booleans!
 \end{namedframe}
-\begin{namedframe}{True and false}
-	We define $\true$ as:
-	\[\true = \lambda x.\lambda y.x = \lambda xy.x\]
+\begin{namedframe}{$\TRUE$ and $\FALSE$}
+	\begin{definition}[$\TRUE$]
+		\[\TRUE = \lambda xy.x\]
+	\end{definition}
 	\pause
-	And $\false$ as:
-	\[\false = \lambda x.\lambda y.y = \lambda xy.y\]
+	\begin{definition}[$\FALSE$]
+		\[\FALSE = \lambda xy.y\]
+	\end{definition}
 	\pause
-	So $\true$ returns the first value, and $\false$ returns the second.
+	So $\TRUE$ returns the first value, and $\FALSE$ returns the second.
 	\sep
-	We will use $\true$ and $\false$ and shorthand for their respective definitions shown here.
+	We will use $\TRUE$ and $\FALSE$ as shorthand for these definitions.
 \end{namedframe}
-\begin{namedframe}{$\not$}
-	$\not$ can be written in lambda calculus as:
-	\[\not = \lambda b . b (\false\ \true)\]
+\begin{namedframe}{$\NOT$}
+	\begin{definition}[$\NOT$]
+		\[\NOT = \lambda b . b (\FALSE\ \TRUE)\]
+	\end{definition}
 	\pause
-	\begin{exampleblock}{$\not\ \true$}
+	\begin{exampleblock}{$\NOT\ \TRUE$}
 		\begin{align*}
-			\uncover<+->{\left( \lambda b . b (\false\ \true) \right) \true &= \uncover<+->{\true (\false\ \true)}}\\
-			\uncover<+->{                                      &= \lambda xy.x (\false\ \true)}\\
-			\uncover<+->{                                      &= \false}
+			\uncover<+->{\left( \lambda b . b (\FALSE\ \TRUE) \right) \TRUE &= \uncover<+->{\TRUE (\FALSE\ \TRUE)}\\}
+			\uncover<+->{                                      &= \lambda xy.x (\FALSE\ \TRUE)\\}
+			\uncover<+->{                                      &= \FALSE}
+		\end{align*}
+	\end{exampleblock}
+\end{namedframe}
+\begin{namedframe}{$\AND$}
+	\begin{definition}[$\AND$]
+		\[\AND = (\lambda pq . p) (q\ p)\]
+	\end{definition}
+	\pause
+	\begin{exampleblock}{$\AND (\TRUE\ \FALSE)$}
+		\begin{align*}
+			\uncover<+->{&\hphantom{=} \left( (\lambda pq . p) (q\ p) \right) (\TRUE\ \FALSE)\\}
+			\uncover<+->{&= \TRUE (\FALSE\ \TRUE)\\}
+			\uncover<+->{&= \FALSE}
 		\end{align*}
 	\end{exampleblock}
 \end{namedframe}
