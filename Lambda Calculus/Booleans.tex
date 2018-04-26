@@ -47,3 +47,15 @@
 		\end{align*}
 	\end{exampleblock}
 \end{namedframe}
+\begin{namedframe}{$\IFTHENELSE$}
+	\begin{definition}[$\AND$]
+		\[\IFTHENELSE = (\lambda btf . b) (t\ f)\]
+		Where $b$ is a Boolean, $t$ is the value to return if $b = \TRUE$, and $f$ is the value to return if $b = \FALSE$.
+	\end{definition}
+	\begin{exampleblock}{$\IFTHENELSE (\TRUE\ \text{``Math is great''}\ \text{``Math is kool''})$}
+		\begin{align*}
+			\uncover<+->{&\hphantom{=} \left( (\lambda btf . b) (t\ f) \right) (\TRUE\ \text{``Math is kool''}\ \text{``Math is lit''})\\}
+			\uncover<+->{&= \left( (\lambda btf . b) (t\ f) \right) (\TRUE\ \text{``Math is kool''}\ \text{``Math is lit''})}
+		\end{align*}
+	\end{exampleblock}
+\end{namedframe}
