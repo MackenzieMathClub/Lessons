@@ -1,0 +1,34 @@
+\section{Church Numerals}
+\begin{namedframe}{Numbers}
+	We define the naturals, $\nat$, using \alert{Church numerals}.
+	\sep
+	The natural numbers are \alert{higher-order functions} in lambda calculus.
+	\pause
+	\begin{definition}[Church numerals]
+		\begin{align*}
+			\uncover<+->{0 &= \lambda fx.x \\}
+			\uncover<+->{1 &= \lambda fx.f(x) \\}
+			\uncover<+->{2 &= \lambda fx.f(f(x)) \\}
+			\uncover<+->{3 &= \lambda fx.f\left(f(f(x))\right) \\}
+			\uncover<+->{4 &= \lambda fx.f\left(f\left(f(f(x))\right)\right) \\}
+			\uncover<+->{n &= \lambda fx.f^n (x)}
+		\end{align*}
+	\end{definition}
+\end{namedframe}
+\begin{namedframe}{Successor}
+	We can add $1$ to a Church  numeral using the successor function:
+	\begin{definition}[Church numerals]
+		\vspace{-1ex}
+		\[\SUCC = \lambda nfx.f (nfx)\]
+	\end{definition}
+	\begin{exampleblock}{$\SUCC\ 0$}
+		\vspace{-3ex}
+		\begin{align*}
+			\uncover<+->{&\hphantom{=} \left(\lambda nfx.f (nfx)\right) (\lambda fx . x)\\}
+			\uncover<+->{&= \left(\lambda fx.f ((\lambda fx . x) fx)\right)\\}
+			\uncover<+->{&= \left(\lambda fx.f ((\lambda x . x) x)\right)\\}
+			\uncover<+->{&= \lambda fx.f (x)\\}
+			\uncover<+->{&= 1}
+		\end{align*}
+	\end{exampleblock}
+\end{namedframe}
