@@ -8,10 +8,35 @@
 \rfoot{\begin{minipage}[t]{0.35\textwidth}\raggedleft\copyright{} Caroline Liu, Vincent Macri, and Samantha Unger, 2018\end{minipage}}
 
 \begin{document}
-	\section*{One Argument}
+	\section*{Definitions}
+		\begin{minipage}{0.5\textwidth}
+			\subsection*{Booleans}
+			$\TRUE = \lambda xy.x$\\
+			$\FALSE = \lambda xy.y$\\
+			$\NOT = \lambda b . b (\FALSE\ \TRUE)$\\
+			$\AND = (\lambda pq . p) (q\ p)$\\
+			$\IFTHENELSE = (\lambda btf . b) (t\ f)$
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\subsection*{Church Numerals}
+			$0 = \lambda fx.x$\\
+			$1 = \lambda fx.f(x)$\\
+			$2 = \lambda fx.f(f(x))$\\
+			$n = \lambda fx.f^n (x)$\\
+			$\SUCC = \lambda nfx.f (nfx)$
+		\end{minipage}
+	\section{One Argument}
 		\subsection{Write the function$f(a, b) = a^2 + b^2$ as a lambda calculus expression}
 		\solutionspace{1in}
-	\section*{Booleans}
+	\section{Booleans}
+		\subsection{Write a lambda calculus expression for $\NAND$}
+		\solutionspace{1in}
 		\subsection{Write a lambda calculus expression for $\XOR$}
 		\solutionspace{1in}
+	\section{Church Numerals}
+		\subsection{What is the numerical value of the Church numeral whose lambda expression is $\lambda fx.f (f(f(f(f(x)))))$?}
+		\solutionspace{1ex}
+		\subsection{What is the lambda expression of the Church numeral whose numerical value is $7$?}
+		\solutionspace{1ex}
+		\subsection{Compute $\SUCC\ \lambda fx.f(f(f(x)))$ and write its numerical value.}
 \end{document}
