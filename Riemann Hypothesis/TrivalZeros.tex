@@ -1,0 +1,31 @@
+\section{Trivial zeros}
+\begin{namedframe}{What are trivial zeros?}
+	Trivial zeros are those that occur when $\Re(s)$ is a negative even number and $\Im(s) = 0$.
+	\sep
+	Formally:
+
+	Let $T$ be the set of negative even integers:
+	\[T = \set{-2n \such n \in \nat}\]
+	Then:
+	\[\forall s \in T,\ \zeta(s) = 0\]
+	\pause
+	These zeros are \alert{trivial} because mathematicians understand them.
+\end{namedframe}
+\begin{namedframe}{Why are they trivial?}
+	For nontrivial reasons, the Riemann zeta function can also be defined as:
+	\[\zeta(s) = 2^s \pi^{s-1}\sin\left(\frac{\pi s}{2}\right) \Gamma(1 - s) \zeta(1-s) \set{s \in \complex \such s \neq 1}\]
+\end{namedframe}
+\begin{namedframe}{Negative evens are zero}
+	\begin{proof}
+		For all $n \in \nat$:
+		\[\zeta(-2n) = 2^{-2n} \pi^{-2n-1}\sin\left(\frac{\pi \times -2n}{2}\right) \Gamma(1+2n) \zeta(1+2n)\]
+		\pause
+		Let's focus on the $\sin\left(\frac{\pi \times -2n}{2}\right)$:
+		\pause
+		\[\sin\left(\frac{\pi \times -2n}{2}\right) = \sin(-2n\pi)\]
+		\pause
+		Since $\sin(x) = \sin(x \bmod 2\pi)$:
+		\pause
+		\[\sin(-2n\pi) =\sin(-2n\pi \bmod 2\pi) =\pause \sin(0) =\pause 0 \qedhere\]
+	\end{proof}
+\end{namedframe}
