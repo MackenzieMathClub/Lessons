@@ -1,33 +1,14 @@
-\documentclass[letterpaper,12pt]{article}
-
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath}
-\usepackage{parskip}
-\usepackage{tasks}
-\usepackage{fancyhdr}
-
-\frenchspacing
+\input{../WorksheetPreamble.tex}
 
 \title{Borsuk-Ulam}
 \author{Mackenzie Math Club}
 \date{May 14, 2018}
 
-\newcommand{\such}{\ |\ }
-
-
-\fancypagestyle{plain}{
-	\fancyhf{} 
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0.4pt}
-	\cfoot{Page \thepage}
-	\lfoot{\texttt{mackenziemathclub.github.io}}
-	\rfoot{\copyright{} Chloe Nguyen, 2018}
-}
+\rfoot{\begin{minipage}[t]{0.35\textwidth}\raggedleft\copyright{} An Nguyen, 2018\end{minipage}}
 
 \begin{document}
-	\maketitle
-	\section{Borsuk-Ulam}
+	\section*{Borsuk-Ulam}
 		Any continuous function from an $n$-sphere to $R^(n)$ must send a pair of antipodal points to the same point.
-	\section{Stolen Necklace Problem}
+	\section*{Stolen Necklace Problem}
 		Two thieves stole a necklace full of various valuable jewels. There are $n$ of types of jewels on the there, arranged randomly. Each jewel types has an even amount of jewels. Prove that it’s possible to evenly divide the jewels among the two thieves by cutting the necklace $n$ number of times or fewer.
 \end{document}
